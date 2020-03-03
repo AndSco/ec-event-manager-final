@@ -49,10 +49,7 @@ const EventRegistrationForm = props => {
   return (
     <CardContent>
       <div style={styles.header}>
-        <SectionTitle
-          title="Register now"
-          callToAction="Fill in the form below"
-        />
+        <SectionTitle title="Register now" />
       </div>
 
       <form

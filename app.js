@@ -6,6 +6,7 @@ const participantRoutes = require("./routes/participants");
 const adminRoutes = require("./routes/admin");
 const port = process.env.PORT || 8081;
 const mongo = require("./mongo");
+const path = require("path"); // To serve both frontend and backend
 
 // BODY PARSER
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -10,7 +10,7 @@ const mongoSettings = {
 
 
 const mongo = () => {
-  const mongoURI = `mongodb+srv://andrea:${mongoAtlasPword}@cluster0-ucicu.mongodb.net/test?retryWrites=true&w=majority`;
+  const mongoURI = `mongodb://andrea:${mongoAtlasPword}@cluster0-ucicu.mongodb.net/test?retryWrites=true&w=majority`;
   mongoose.set("debug", true);
   mongoose.set("useFindAndModify", false);
   mongoose.Promise = Promise; // allows us to do without CALLBACKS!

@@ -20,7 +20,7 @@ const mongo = () => {
     })
   })
 
-  mongoose.connect(mongoURI, mongoSettings);
+  mongoose.connect(mongoURI, mongoSettings, err => {throw err});
 
   return connected;
 }

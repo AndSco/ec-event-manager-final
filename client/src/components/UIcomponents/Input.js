@@ -101,6 +101,7 @@ const Input = props => {
         required={props.isCompulsory}
         onChange={e => handleChange(e)}
         onBlur={updateInput}
+        placeholder={props.placeholder}
       />
     );
   }

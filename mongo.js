@@ -5,7 +5,7 @@ const mongoSettings = {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
-  useUnifiedTopology: false
+  useUnifiedTopology: true
 };
 
 

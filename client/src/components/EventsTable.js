@@ -1,0 +1,85 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { deleteEventFromDB } from "../dbFunctions/handlers/events";
+import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
+import CellContent from "./UIcomponents/CellContent";
+import {formatDate} from "../utils/functions";
+
+
+const Td = ({ children, to }) => {
+  // Conditionally wrapping content into a link
+  const ContentTag = to ? Link : "div";
+
+  return (
+    <td>
+      <ContentTag to={to}>{children}</ContentTag>
+    </td>
+  );
+};
+
+const EventsTable = props => {
+  const context = React.useContext(RegistrationContext);
+  const {uploadAllEvents, startEditingEvent} = context;
+
+  const deleteAndReload = async eventId => {
+    await deleteEventFromDB(eventId);
+    uploadAllEvents();
+  };
+
+  return (
+    <table className="table events">
+      <thead>
+        <tr>
+          {props.tableHeaders.map((header, i) => (
+            <th key={i}>
+              <h3>{header}</h3>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {props.tableEntries.map((entry, i) => {
+          return (
+            <tr key={i}>
+              <Td to={`/events/${entry._id}`}>
+                <CellContent value={entry.title} isImportant={true} />
+              </Td>
+              <td>
+                <CellContent value={formatDate(entry.date)} />
+              </td>
+              <td>
+                <CellContent value={entry.venue} />
+              </td>
+              <td>
+                <CellContent value={entry.participantsRegistered.length} />
+              </td>
+              <td className="icon-cell">
+                <FontAwesomeIcon
+                  className="action-icon"
+                  icon="edit"
+                  onClick={() => {
+                    startEditingEvent(entry);
+                  }}
+                />
+                <FontAwesomeIcon
+                  className="action-icon"
+                  icon="trash-alt"
+                  onClick={() => deleteAndReload(entry._id)}
+                />
+                <Link to={`/${entry._id}`}>
+                <FontAwesomeIcon
+                  className="action-icon"
+                  icon="users"
+                />
+                </Link>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>  
+  );
+}
+
+export default EventsTable;

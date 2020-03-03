@@ -1,0 +1,46 @@
+import React from "react";
+
+export default React.createContext({
+  //Participant side
+  isRegistering: false,
+  isRegistrationOver: false,
+  openRegistrationForm: () => {},
+  closeRegistrationForm: () => {},
+  handleInputChange: () => {},
+  finishRegistrationProcess: () => {},
+  backToEventPageAndHideButton: () => {},
+  isRegistrationButtonHidden: false,
+  // Admin side
+  isAdminLoggedIn: false,
+  logInAdmin: () => {},
+  logoutAdmin: () => {},
+  isCreatingEvent: false,
+  startCreatingEvent: () => {},
+  finishedCreatingEvent: () => {},
+  allEvents: [],
+  uploadAllEvents: () => {},
+  currentEvent: undefined,
+  isLoading: false,
+  loadEventOnPage: () => {},
+  isEditingEvent: false,
+  startEditingEvent: () => {},
+  finishedEditingEvent: () => {},
+  eventCurrentlyEditing: undefined,
+  isModalOpen: false,
+  openModal: () => {},
+  closeModal: () => {},
+  manageModal: () => {},
+  modalMessage: "",
+  actionType: "",
+  //Multiple choice
+  selectedParticipants: [],
+  isSelectAllActive: false,
+  isDeselectAllActive: false,
+  onUserSelectionHandler: () => {},
+  pushInBlock: () => {},
+  selectAll: () => {},
+  deselectAll: () => {},
+  resetSwitch: () => {},
+  startLoading: () => {},
+  stopLoading: () => {}
+});

@@ -3,8 +3,10 @@ const { mongoAtlasPword } = require("./config");
 const mongoSettings = {
   keepAlive: true,
   useNewUrlParser: true,
-  useUnifiedTopology: true
-}
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useUnifiedTopology: false
+};
 
 
 const mongo = () => {

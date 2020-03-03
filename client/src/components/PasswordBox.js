@@ -34,8 +34,9 @@ const PasswordBox = props => {
 
   return (
     <div
-      className="confirmation-box-container"
-      style={{ marginTop: 40, width: "50%" }}
+      className="confirmation-box-container" 
+      id="password-box"
+      style={{ marginTop: 40 }}
     >
       <SectionTitle title="Enter your credentials to access" />
       <div id="confirmation-box" style={{ paddingTop: 20 }}>

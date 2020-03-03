@@ -7,6 +7,7 @@ import EventHeader from "./EventHeader";
 import CardContent from "./UIcomponents/CardContent";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import EventRegistrationForm from "./EventRegistrationForm";
+import ProgrammeViewer from "./ProgrammeViewer";
 
 
 const Event = props => {
@@ -22,12 +23,13 @@ const Event = props => {
           time={`${props.startingTime} - ${props.endingTime}`}
           venue={props.venue}
         />
-    
+
         {isRegistering ? (
           <EventRegistrationForm />
         ) : (
           <CardContent>
             <EventDescription description={props.description} />
+            {props.pdfProgramme && <ProgrammeViewer />}
             {props.videoUrl && <VideoPlayer videoUrl={props.videoUrl} />}
           </CardContent>
         )}

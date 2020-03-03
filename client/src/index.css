@@ -148,6 +148,9 @@ textarea {
 
 }
 
+#password-box {
+  width: 50%;
+}
 
 #card {
   -webkit-box-shadow: 4px 4px 6px -4px rgba(0,0,0,0.75);
@@ -479,12 +482,10 @@ textarea {
 
 }
 
-/* PDF VIEWER */
-.react-pdf__Page__svg {
+/* PROGRAMME VIEWER */
+.programme-image {
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
-  border: 1px solid var(--lightest-grey);
 }
 
 /* VIDEO PLAYER */
@@ -551,6 +552,14 @@ textarea {
 
 /* MEDIA QUERIES */
 @media only screen and (max-width:650px) {
+  #password-box {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 30px;
+    flex-direction: column;
+  }
+
   #navbar {
     display: none;
   }

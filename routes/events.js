@@ -24,7 +24,7 @@ cloudinary.config({
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: "eventManager",
-  allowedFormats: ["pdf"],
+  allowedFormats: [".png, .jpg, .JPG, .PNG, .jpeg"]
 });
 
 const upload = multer({ storage: storage });

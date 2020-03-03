@@ -126,7 +126,7 @@ const Input = props => {
         type="file"
         id={props.identifier}
         name="file"
-        accept=".pdf"
+        accept=".png, .jpg, .JPG, .PNG, .jpeg"
         onChange={e => handleFileChange(e)}
         required={props.isCompulsory}
       />

@@ -19,8 +19,8 @@ const InputLogin = props => {
       </label>
 
       <input
-        type="text"
-        placeholder="test"
+        type={props.isPassword ? "password" : "text"}
+        placeholder={props.placeholder}
         name={props.inputName}
         style={{ width: "100%" }}
         value={inputValue}

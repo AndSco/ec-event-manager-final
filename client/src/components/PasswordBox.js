@@ -34,7 +34,7 @@ const PasswordBox = props => {
 
   return (
     <div
-      className="confirmation-box-container" 
+      className="confirmation-box-container"
       id="password-box"
       style={{ marginTop: 40 }}
     >
@@ -44,14 +44,21 @@ const PasswordBox = props => {
           isCompulsory={true}
           inputName="username"
           onInputChange={updateState}
+          placeholder="enter username"
         />
         <InputLogin
+          isPassword={true}
           isCompulsory={true}
           inputName="password"
           onInputChange={updateState}
+          placeholder="enter password"
         />
         <div style={{ marginTop: 20 }}>
-          <CustomButton buttonName="ENTER" color="#FF006C" functionToPerform={login} />
+          <CustomButton
+            buttonName="ENTER"
+            color="#FF006C"
+            functionToPerform={login}
+          />
         </div>
       </div>
     </div>

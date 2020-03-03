@@ -1,7 +1,6 @@
 import React from "react";
 import { formReducer } from "../dbFunctions/reducers/formReducer";
 import initialFormState from "../dbFunctions/reducers/eventFormInitialState";
-// import inputsConfig from "../assets/eventInputs";
 import { createStartingInputs } from "../assets/eventInputs";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import { sendParticipantToDB } from "../dbFunctions/handlers/participants";
@@ -68,6 +67,7 @@ const EventRegistrationForm = props => {
             min={input.min || undefined}
             isLong={input.isLong || undefined}
             key={index}
+            isEmailInput={input.isEmailInput || undefined}
             isTextArea={input.isTextArea || undefined}
             isFileInput={input.isFileInput || undefined}
             isDateInput={input.isDateInput || undefined}

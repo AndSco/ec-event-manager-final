@@ -49,6 +49,14 @@ const EventSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   }
+  // programmeImages: [{
+  //   imageUrl: {
+  //     type: String
+  //   }, 
+  //   imagePublicId: {
+  //     type: String
+  //   }
+  // }]
 });
 
 // To let the post save hook whether the document is newly created or not;

@@ -54,7 +54,8 @@ export const createStartingInputs = eventObject => {
     name: "Email address",
     isCompulsory: true,
     placeholder: "Enter your email address",
-    validationNeeded: "email"
+    validationNeeded: "email",
+    isEmailInput: true
   });
 
   return inputsToReturn;

@@ -9,6 +9,27 @@ const mongo = require("./mongo");
 const path = require("path"); // To serve both frontend and backend
 
 
+const mongoose = require("mongoose");
+const { mongoAtlasPword } = require("./config");
+const mongoSettings = {
+  keepAlive: true,
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+};
+
+const mongoURI = `mongodb+srv://andrea:${mongoAtlasPword}@cluster0-ucicu.mongodb.net/test?retryWrites=true&w=majority`;
+mongoose.set("debug", true);
+mongoose.set("useFindAndModify", false);
+mongoose.Promise = Promise; // allows us to do without CALLBACKS!
+
+mongoose.connect(mongoURI, mongoSettings, err => {
+  throw err;
+});
+
+
+
 
 // BODY PARSER
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,9 +62,7 @@ app.use((error, req, res) => {
   });
 });
 
-const init = async () => {
-  await mongo();
-  app.listen(port, () => console.log(`Server started on port ${port}`));
-}
 
-init();
+app.listen(port, () => console.log(`Server started on port ${port}`));
+
+

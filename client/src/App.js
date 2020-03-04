@@ -15,6 +15,17 @@ import Footer from './components/Footer';
 library.add(fab, faCalendarAlt, faClock, faMapPin, faAngleDown, faAngleLeft, faAngleRight, faCheckCircle, faTrashAlt, faEdit, faUserPlus, faUserMinus, faLink, faTimesCircle, faUsers, faBan, faSortAlphaDown, faDesktop, faEnvelope);
 
 function App() {
+  const isInternetExplorer = /*@cc_on!@*/ false || !!document.documentMode;
+  console.log("is this Explorer?", isInternetExplorer);
+
+  if (isInternetExplorer) {
+    return (
+      <div style={{withd: "100%", display: "flex", justifyContent: "center"}}>
+        <h2>Please use any other browser to access this page</h2>
+      </div>  
+    )
+  }
+
   return (
     <Router>
       <ContextRegistration>

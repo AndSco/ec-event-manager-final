@@ -13,10 +13,17 @@ const ConfirmationMessage = props => {
     <div className="confirmation-box-container">
       <div id="confirmation-box">
         <FontAwesomeIcon icon="check-circle" color="#13E3AB" size="4x" />
-        <div style={{ margin: "20px 0 50px 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <h2>{`Thanks for registering...`} </h2>
+        <div
+          style={{
+            margin: "20px 0 50px 0",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
+        >
+          <h2>Thank you for registering!</h2>
           <h4 style={{ textAlign: "center" }}>
-            You will receive a confirmation email soon!
+            We will confirm your attendance, or otherwise, as soon as possible.
           </h4>
           <AddToCalendarButton />
         </div>

@@ -9,17 +9,23 @@ const participationStatusDictionary = {
 
 const emailMessages = {
   createConfirmationMessage: (event, participant) =>
-    `Dear ${participant.firstName},%0D%0A %0D%0A Your registration to ${event.title} has been approved!`,
-  createRejectionMessage: (event, participant) =>
-    `Dear ${participant.firstName},%0D%0A %0D%0A We are sorry to inform you that your registration to ${event.title} has not been approved. We look forward to you joining us for future events`,
-  createReminderMessage: (event, participant) =>
     `Dear ${
       participant.firstName
-    },%0D%0A %0D%0A This is to remind you that the event ${
+    },%0D%0A %0D%0A We are pleased to confirm your attendance to the event "${
       event.title
-    } will soon happen! On ${formatDate(event.date)} at ${
+    }" to be held on ${formatDate(event.date)} at ${
       event.startingTime
-    } at ${event.venue}`
+    }.%0D%0A %0D%0A Kind regards,`,
+  createRejectionMessage: (event, participant) =>
+    `Dear ${participant.firstName},%0D%0A %0D%0A We regret to inform you that your registration to the event ${event.title} has not been accepted. We hope to be able to welcome you to another one of our events in the near future.%0D%0A %0D%0A Kind regards,`,
+  createReminderMessage: (event, participant) =>
+    `Dear ${participant.firstName},%0D%0A %0D%0A The event "${
+      event.title
+    }" is due to take place on ${formatDate(event.date)} at ${
+      event.startingTime
+    } at ${
+      event.venue
+    }. We look forward to seeing you soon!%0D%0A %0D%0A Kind regards,`
 };
 
 export const sendEmail = (purpose, participantsArray, currentEvent) => {
@@ -56,25 +62,25 @@ export const sendEmail = (purpose, participantsArray, currentEvent) => {
     if (purpose === "accept") {
       window.location.href = `mailto:?bcc=${[
         ...emailAddresses
-      ]}&subject=Your Event Registration&body=Dear Sir/Madam,%0D%0A %0D%0A Your registration to ${
-        currentEvent.title
-      } has been approved!`;
+      ]}&subject=Your Event Registration&body=Dear Sir/Madam,%0D%0A %0D%0A We are pleased to confirm your attendance to the event "${event.title}" to be held on ${formatDate(event.date)} at ${ event.startingTime }.%0D%0A %0D%0A Kind regards,`;
     }
     if (purpose === "reject") {
       window.location.href = `mailto:?bcc=${[
         ...emailAddresses
-      ]}&subject=Your Event Registration&body=Dear Sir/Madam,%0D%0A %0D%0A We are sorry to inform you that your registration to ${
-        currentEvent.title
-      } has not been approved. We look forward to you joining us for future events`;
+      ]}&subject=Your Event Registration&body=Dear Sir/Madam,%0D%0A %0D%0A We regret to inform you that your registration to the event ${
+        event.title
+      } has not been accepted. We hope to be able to welcome you to another one of our events in the near future.%0D%0A %0D%0A Kind regards,`;
     }
     if (purpose === "remind") {
       window.location.href = `mailto:?bcc=${[
         ...emailAddresses
-      ]}&subject=Your Event is coming up soon!&body=Dear Sir/Madam,%0D%0A %0D%0A This is to remind you that the event ${
-        currentEvent.title
-      } will soon happen! On ${formatDate(currentEvent.date)} at ${
-        currentEvent.startingTime
-      } at ${currentEvent.venue}`;
+      ]}&subject=Your Event is coming up soon!&body=Dear Sir/Madam,%0D%0A %0D%0A The event "${
+        event.title
+      }" is due to take place on ${formatDate(event.date)} at ${
+        event.startingTime
+      } at ${
+        event.venue
+      }. We look forward to seeing you soon!%0D%0A %0D%0A Kind regards,`;
     }
   }
   

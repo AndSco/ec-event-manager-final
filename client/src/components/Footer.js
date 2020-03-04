@@ -2,6 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = props => {
+  const isIE = /*@cc_on!@*/ false || !!document.documentMode;
+
+  console.log("is this Explorer?", isIE);
   return (
     <div id="footer">
       <div id="footer-content">

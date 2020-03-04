@@ -46,7 +46,7 @@ const EventHeader = props => {
   } = context;
 
   return (
-    <div className="event-header">
+    <div className="event-header" id={isRegistering ? "header-to-hide" : ""}>
       <Logo />
       <div className="event-header-content">
         <div className="details">

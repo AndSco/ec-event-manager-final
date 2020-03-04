@@ -10,6 +10,7 @@ import { FORM_UPDATE } from "../dbFunctions/reducers/formReducer";
 import CustomButton from "./UIcomponents/CustomButton";
 import SectionTitle from "./UIcomponents/SectionTitle";
 import CardContent from "./UIcomponents/CardContent";
+import SecondaryButton from "./UIcomponents/SecondaryButton";
 
 const EventRegistrationForm = props => {
   const [formState, dispatchFormState] = React.useReducer(
@@ -81,6 +82,15 @@ const EventRegistrationForm = props => {
             isSubmitButton
             largeButton={true}
           />
+        </BottomButtons>
+        <BottomButtons isSingleButton={true}>
+          <div id="disappearing-button">
+            <SecondaryButton
+              buttonName="Cancel and go back"
+              functionToPerform={closeRegistrationForm}
+              isBackButton={true}
+            />
+          </div>
         </BottomButtons>
       </form>
     </CardContent>

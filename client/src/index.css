@@ -498,6 +498,10 @@ textarea {
 
 }
 
+#disappearing-button {
+  display: none;
+}
+
 /* PROGRAMME VIEWER */
 .programme-image {
   max-width: 100%;
@@ -720,5 +724,17 @@ textarea {
 
   .button-container {
     margin-top: 0;
+  }
+
+  #disappearing-button {
+    display: block;
+  }
+
+  .secondary-button {
+    margin-top: 0;
+  }
+
+  #header-to-hide {
+    display: none;
   }
 }

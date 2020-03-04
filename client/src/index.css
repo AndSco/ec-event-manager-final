@@ -559,6 +559,21 @@ textarea {
   margin-right: 30px;
 }
 
+/* FOOTER */
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+}
+
+#footer-content {
+  cursor: pointer;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width:650px) {
   #password-box {
@@ -687,5 +702,9 @@ textarea {
     padding: 10px;
   }
 
+
+#footer-content {
+  width: 80%;
+}
 
 }

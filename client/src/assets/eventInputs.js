@@ -11,10 +11,10 @@ export const createStartingInputs = eventObject => {
 
   inputsToReturn.push({
     identifier: "secondName",
-    name: "Second Name",
+    name: "Last Name",
     isCompulsory: true,
     validationNeeded: "minLength",
-    placeholder: "Enter your second name",
+    placeholder: "Enter your last name",
     min: 3
   });
 

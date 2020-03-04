@@ -107,6 +107,7 @@ button {
   cursor: pointer;
 }
 
+
 textarea {
   /* padding: 8px; */
   font-family: "regular";
@@ -595,6 +596,10 @@ textarea {
     box-sizing: border-box;
     background: none;
     background-color: var(--barely-visible-grey);
+  }
+
+  .main-button {
+    width: 70%
   }
 
   .event-container {

@@ -8,7 +8,10 @@ const BottomButtons = props => {
   const context = React.useContext(RegistrationContext);
 
   return (
-    <div style={styles.container}>
+    <div
+      style={{ ...styles.container, justifyContent: props.isSingleButton ?"space-between" : "center" }}
+      className="button-container"
+    >
       {props.children}
       {/* <SecondaryButton
         isBackButton={true}
@@ -27,7 +30,6 @@ const BottomButtons = props => {
 const styles = {
   container: {
     display: "flex",
-    justifyContent: "space-between", 
     alignItems: "center", 
     margin: "30px 0", 
     width: "100%"

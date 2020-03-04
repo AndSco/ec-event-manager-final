@@ -20,8 +20,8 @@ function App() {
 
   if (isInternetExplorer) {
     return (
-      <div style={{withd: "100%", display: "flex", justifyContent: "center"}}>
-        <h2>Please use any other browser to access this page</h2>
+      <div style={{withd: "100%", display: "flex", justifyContent: "center", padding: "50px 0"}}>
+        <h2 id="explorer-message">Please use any other browser to access this page</h2>
       </div>  
     )
   }

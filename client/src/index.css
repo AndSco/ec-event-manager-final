@@ -114,6 +114,10 @@ textarea {
   font-size: 14px;
 }
 
+#explorer-message {
+  font-family: "medium";
+}
+
 /* NAVBAR */
 #navbar {
   height: 15vh;

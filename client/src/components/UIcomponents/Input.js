@@ -55,7 +55,7 @@ const Input = props => {
       type="text"
       placeholder={props.placeholder}
       name={props.inputName}
-      style={{ width: "100%" }}
+      // style={{ width: "100%" }}
       value={inputValue}
       onChange={e => handleChange(e)}
       onBlur={updateInput}

@@ -142,7 +142,7 @@ textarea {
 /* Main container */
 #main-container {
   min-height: 85vh;
-  padding: 20px;
+  padding: 3.5em;
   display: flex;
   flex-direction: column;
   background: #56CCF2; 
@@ -496,7 +496,14 @@ textarea {
   background-color: white;
   padding: 60px;
   border-radius: 7px;
+}
 
+#confirmation-box-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 70%;
 }
 
 #disappearing-button {
@@ -710,6 +717,13 @@ textarea {
     display: flex;
     justify-content: center;
     background-color: none;
+  }
+
+  #confirmation-box-content h4 {
+    font-size: 18px;
+    line-height: 1.2em;
+    justify-content: flex-start;
+    margin-top: 30%;
   }
 
   .registration-button-substitute {

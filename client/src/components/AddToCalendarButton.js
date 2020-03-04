@@ -3,6 +3,7 @@ import AddToCalendar from "react-add-to-calendar";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import { addTimeToADate } from "../utils/functions";
 
+
 const testEvent = {
   title: 'Sample Event',
   description: 'This is the sample event provided as an example only',
@@ -16,6 +17,7 @@ const AddToCalendarButton = props => {
   const {currentEvent} = context;
   const {title, description, venue: location, date, startingTime, endingTime} = currentEvent;
   const [eventForCalendar, setEventForCalendar] = React.useState(null);
+
 
   React.useEffect(() => {
     if (currentEvent) {
@@ -35,7 +37,7 @@ const AddToCalendarButton = props => {
   return (
     <div className="calendar-container">
       <AddToCalendar event={eventForCalendar} />
-    </div>  
+    </div>
   );
 }
 

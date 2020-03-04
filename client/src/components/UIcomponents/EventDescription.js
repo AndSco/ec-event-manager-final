@@ -5,7 +5,7 @@ const EventDescription = (props) => {
   return (
     <div>
       <EventSectionTitle title="description" />
-      <p style={styles.paragraph}>{props.description}</p>
+      <p style={styles.paragraph} id="event-description">{props.description}</p>
     </div>  
   )
 }

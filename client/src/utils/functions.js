@@ -165,7 +165,7 @@ export const addTimeToADate = (dateObj, startingTime) => {
   const minutes = startingTime.split(":")[1];
   const time = moment(new Date(actualDate));
   time.add(hours, "hours").add(minutes, "minutes"); 
-  return time.format();  
+  return time.format("YYYYMMDDTHHmmssZ"); 
 }
 
 

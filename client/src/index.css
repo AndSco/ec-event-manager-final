@@ -150,6 +150,7 @@ textarea {
 
 #password-box {
   width: 50%;
+  max-width: 500px;
 }
 
 #card {
@@ -218,6 +219,10 @@ textarea {
   font-size: 16px;
   font-family: "light";
   text-align: left;
+}
+
+#event-description {
+  white-space: pre-wrap;
 }
 
 .icon-line {
@@ -644,7 +649,7 @@ textarea {
   }
 
   input {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   label {

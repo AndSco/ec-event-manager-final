@@ -170,6 +170,7 @@ textarea {
 
 .card-content {
   padding: 60px 40px; 
+  background-color: white;
   /* padding-bottom: 60px; */
 }
 
@@ -736,5 +737,9 @@ textarea {
 
   #header-to-hide {
     display: none;
+  }
+
+  #card-to-collapse {
+    margin: 0;
   }
 }

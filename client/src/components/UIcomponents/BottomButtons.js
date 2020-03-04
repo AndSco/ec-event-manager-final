@@ -9,20 +9,11 @@ const BottomButtons = props => {
 
   return (
     <div
-      style={{ ...styles.container, justifyContent: props.isSingleButton ?"space-between" : "center" }}
+      style={{ ...styles.container, justifyContent: props.isSingleButton ? "center" : "space-between" }}
       className="button-container"
     >
       {props.children}
-      {/* <SecondaryButton
-        isBackButton={true}
-        buttonName={props.secondaryText}
-        functionToPerform={context.closeRegistrationForm}
-      />
-      <CustomButton
-        buttonName={props.successText}
-        color="#13E3AB"
-        isSubmitButton
-      /> */}
+      
     </div>
   );
 }
@@ -31,7 +22,7 @@ const styles = {
   container: {
     display: "flex",
     alignItems: "center", 
-    margin: "30px 0", 
+    // margin: "30px 0", 
     width: "100%"
   }
 };

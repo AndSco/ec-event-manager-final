@@ -261,7 +261,9 @@ textarea {
   background: none;
 }
 
-
+.button-container {
+  margin: 30px 0;
+}
 
 .error-message {
   color: red;
@@ -599,9 +601,10 @@ textarea {
   }
 
   .main-button {
-    width: 70%
+    margin: 0px;
   }
 
+  
   .event-container {
     width: 100vw;
   }
@@ -707,9 +710,11 @@ textarea {
     padding: 10px;
   }
 
+  #footer-content {
+    width: 80%;
+  }
 
-#footer-content {
-  width: 80%;
-}
-
+  .button-container {
+    margin-top: 0;
+  }
 }

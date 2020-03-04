@@ -74,8 +74,13 @@ const EventRegistrationForm = props => {
           />
         ))}
 
-        <BottomButtons>
-          <CustomButton buttonName="SUBMIT" color="#13E3AB" isSubmitButton />
+        <BottomButtons isSingleButton={true}>
+          <CustomButton
+            buttonName="SUBMIT"
+            color="#13E3AB"
+            isSubmitButton
+            largeButton={true}
+          />
         </BottomButtons>
       </form>
     </CardContent>

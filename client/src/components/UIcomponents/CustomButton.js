@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomButton = props => {
   return (
-    <button className="main-button" style={{...styles.button, backgroundColor: props.color, ...props.buttonStyles}} onClick={props.functionToPerform} type={props.isSubmitButton ? "submit" : undefined}>
+    <button className="main-button" style={{...styles.button, backgroundColor: props.color, width: props.largeButton ? "90%" : "", ...props.buttonStyles}} onClick={props.functionToPerform} type={props.isSubmitButton ? "submit" : undefined}>
       <h3 style={styles.text}>{props.buttonName}</h3>
     </button>
   )

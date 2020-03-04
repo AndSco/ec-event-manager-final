@@ -11,6 +11,7 @@ import CustomButton from "./UIcomponents/CustomButton";
 import SectionTitle from "./UIcomponents/SectionTitle";
 import CardContent from "./UIcomponents/CardContent";
 import SecondaryButton from "./UIcomponents/SecondaryButton";
+import EventMinimalHeader from "./EventMinimalHeader";
 
 const EventRegistrationForm = props => {
   const [formState, dispatchFormState] = React.useReducer(
@@ -46,54 +47,57 @@ const EventRegistrationForm = props => {
   };
 
   return (
-    <CardContent>
-      <div style={styles.header}>
-        <SectionTitle title="Register now" />
-      </div>
+    <div>
+      <EventMinimalHeader />
+      <CardContent>
+        {/* <div style={styles.header}>
+          <SectionTitle title="Register now" />
+        </div> */}
 
-      <form
-        encType="multipart/form-data"
-        style={styles.formContainer}
-        onSubmit={handleSubmit}
-      >
-        {inputsConfig.map((input, index) => (
-          <Input
-            identifier={input.identifier}
-            inputName={input.name}
-            isCompulsory={input.isCompulsory || undefined}
-            placeholder={input.placeholder}
-            onInputChange={handleInputChange}
-            validationNeeded={input.validationNeeded || undefined}
-            min={input.min || undefined}
-            isLong={input.isLong || undefined}
-            key={index}
-            isEmailInput={input.isEmailInput || undefined}
-            isTextArea={input.isTextArea || undefined}
-            isFileInput={input.isFileInput || undefined}
-            isDateInput={input.isDateInput || undefined}
-            isTimeInput={input.isTimeInput || undefined}
-          />
-        ))}
-
-        <BottomButtons isSingleButton={true}>
-          <CustomButton
-            buttonName="SUBMIT"
-            color="#13E3AB"
-            isSubmitButton
-            largeButton={true}
-          />
-        </BottomButtons>
-        <BottomButtons isSingleButton={true}>
-          <div id="disappearing-button">
-            <SecondaryButton
-              buttonName="Cancel and go back"
-              functionToPerform={closeRegistrationForm}
-              isBackButton={true}
+        <form
+          encType="multipart/form-data"
+          style={styles.formContainer}
+          onSubmit={handleSubmit}
+        >
+          {inputsConfig.map((input, index) => (
+            <Input
+              identifier={input.identifier}
+              inputName={input.name}
+              isCompulsory={input.isCompulsory || undefined}
+              placeholder={input.placeholder}
+              onInputChange={handleInputChange}
+              validationNeeded={input.validationNeeded || undefined}
+              min={input.min || undefined}
+              isLong={input.isLong || undefined}
+              key={index}
+              isEmailInput={input.isEmailInput || undefined}
+              isTextArea={input.isTextArea || undefined}
+              isFileInput={input.isFileInput || undefined}
+              isDateInput={input.isDateInput || undefined}
+              isTimeInput={input.isTimeInput || undefined}
             />
-          </div>
-        </BottomButtons>
-      </form>
-    </CardContent>
+          ))}
+
+          <BottomButtons isSingleButton={true}>
+            <CustomButton
+              buttonName="SUBMIT"
+              color="#13E3AB"
+              isSubmitButton
+              largeButton={true}
+            />
+          </BottomButtons>
+          {/* <BottomButtons isSingleButton={true}>
+            <div id="disappearing-button">
+              <SecondaryButton
+                buttonName="Cancel and go back"
+                functionToPerform={closeRegistrationForm}
+                isBackButton={true}
+              />
+            </div>
+          </BottomButtons> */}
+        </form>
+      </CardContent>
+    </div>
   );
 };
 

@@ -1,9 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 
 const Footer = props => {
+  const context = React.useContext(RegistrationContext);
+  const { isRegistering } = context;
+
   return (
-    <div id="footer">
+    <div className="footer" id={isRegistering ? "hidable-footer" : ""}>
       <div id="footer-content">
         <a href="https://www.facebook.com/KummissjoniEwropea/" target="blank">
           <h5>

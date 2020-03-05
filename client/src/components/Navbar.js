@@ -18,7 +18,7 @@ const Navbar = props => {
         </h4>
       </div>
       {!isAdminLoggedIn ? (
-        <a>
+        <a href="https://ec.europa.eu/info/legal-notice_en#privacy-policy" target="_blank">
           <h5>{"Privacy Policy".toUpperCase()}</h5>
         </a>
       ) : (

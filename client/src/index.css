@@ -258,14 +258,22 @@ textarea {
   margin-right: 15px;
 }
 
-.logo-image {
-  border-radius: 30%;
-	width: 60px;
-	height: 60px;
-	background-size: cover;
-	background-position: center;
-  /* border: 1px solid var(--dark-grey); */
-  /* padding: 30px; */
+.logo {
+  animation-name: enter;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .input-container {

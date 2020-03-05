@@ -178,6 +178,7 @@ textarea {
   display: flex;
   justify-content: center;
   width: 85vw;
+  min-width: 80%;
   /* max-width: 1000px; */
 }
 

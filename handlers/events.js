@@ -45,7 +45,6 @@ module.exports.deleteEvent = async (req, res, next) => {
     await Participant.deleteMany({ eventIdRegisteredFor: req.params.eventId });
     const eventToDelete = await Event.findById(req.params.eventId);
     const idOfProgrammeToDelete = eventToDelete.programmeImage.public_id;
-    console.log("the id is ", idOfProgrammeToDelete);
     await deleteProgrammeOnCloudinary(idOfProgrammeToDelete);
     await Event.deleteOne({_id: req.params.eventId});
     res.status(200).json({message: "users and event deleted"});
@@ -81,31 +80,33 @@ module.exports.uploadEventProgramme = async (req, res, next) => {
 };
 
 
-// const deleteProgrammeOnCloudinary = async (req, res, next) => {
-//   try {
-//     const {public_id} = req.params;
-//     cloudinary.v2.uploader.destroy(public_id, (error, result) => {
-//       if (err) throw err;
-//       console.log("Deleted?", result);
-//       res.status(200).json({
-//         id: public_id,
-//         result
-//       })
-//     });
-//   } catch(err) {
-//     return next(err);
-//   }
-// }
 
 const deleteProgrammeOnCloudinary = async (public_id) => {
   try {
-    cloudinary.v2.uploader.destroy(public_id, (err, result) => {
+    console.log("public id", public_id);
+    const result = await cloudinary.v2.uploader.destroy(`eventManager/${public_id}`, (err, result) => {
       if (err) {
         throw err
       };
       console.log("Deleted?", result);
+      return result;
     });
   } catch (err) {
     throw err;
+  }
+};
+
+module.exports.testDeleteProgrammeOnCloudinary = async (req, res, next) => {
+  try {
+    const {public_id} = req.params;
+    console.log("public id", public_id);
+    const result = await cloudinary.v2.uploader.destroy(`eventManager/${public_id}`, { invalidate: true }, (error, result) => {
+        console.log(result); // { result: 'ok' }
+        return result;
+      }
+    );
+    res.status(200).json(result);
+  } catch (err) {
+    return next(err);
   }
 };

@@ -7,7 +7,8 @@ const {
   deleteEvent,
   editEvent,
   uploadEventProgramme,
-  deleteProgrammeOnCloudinary
+  deleteProgrammeOnCloudinary,
+  createAndUploadProgramme
 } = require("../handlers/events");
 
 const multer = require("multer");
@@ -24,7 +25,7 @@ cloudinary.config({
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
   folder: "eventManager",
-  allowedFormats: [".png, .jpg, .JPG, .PNG, .jpeg"]
+  allowedFormats: ["png", "jpg", "JPG", "PNG", "jpeg"]
 });
 
 const upload = multer({ storage: storage });

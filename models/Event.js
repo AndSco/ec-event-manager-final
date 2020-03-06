@@ -23,12 +23,6 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  pdfProgramme: {
-    type: String
-  },
-  pdfProgrammePublicId: {
-    type: String
-  },
   videoUrl: {
     type: String
   },
@@ -48,15 +42,15 @@ const EventSchema = new mongoose.Schema({
   isOrganisationRequired: {
     type: Boolean,
     default: false
+  },
+  programmeImage: {
+    programmeUrl: {
+      type: String
+    },
+    public_id: {
+      type: String
+    }
   }
-  // programmeImages: [{
-  //   imageUrl: {
-  //     type: String
-  //   }, 
-  //   imagePublicId: {
-  //     type: String
-  //   }
-  // }]
 });
 
 // To let the post save hook whether the document is newly created or not;

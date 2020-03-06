@@ -64,17 +64,18 @@ module.exports.editEvent = async (req, res, next) => {
 
 module.exports.uploadEventProgramme = async (req, res, next) => {
   try {
-    console.log("REQQ", req.file);
     const programmeUrl = req.file.secure_url;
     const public_id = req.file.public_id.split("/")[1];
-    res.status(200).json({ 
-      programmeUrl: programmeUrl,
-      publicId: public_id
-     });
-  } catch(err) {
+
+    res.status(200).json({
+      programmeUrl,
+      public_id
+    });
+  } catch (err) {
     return next(err);
   }
-}
+};
+
 
 module.exports.deleteProgrammeOnCloudinary = async (req, res, next) => {
   try {

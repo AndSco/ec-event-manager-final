@@ -10,9 +10,13 @@ const ProgrammeViewer = props => {
   console.log("evvv", currentEvent);
 
   return (
-    <div style={{ marginTop: 70}}>
+    <div style={{ marginTop: 70 }}>
       <ExpandingSection title="Programme">
-        <img src={currentEvent.pdfProgramme} className="programme-image" style={{width: isImageFullScreen ? "90vw" : "" }} />
+        <img
+          src={currentEvent.programmeImage.programmeUrl}
+          className="programme-image"
+          style={{ width: isImageFullScreen ? "90vw" : "" }}
+        />
         {/* <p onClick={() => {
           setIsImageFullScreen(!isImageFullScreen);
           }}>Expand</p> */}

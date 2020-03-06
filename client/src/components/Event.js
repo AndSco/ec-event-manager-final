@@ -29,7 +29,7 @@ const Event = props => {
         ) : (
           <CardContent>
             <EventDescription description={props.description} />
-            {props.pdfProgramme && <ProgrammeViewer />}
+            {props.programmeImage && <ProgrammeViewer />}
             {props.videoUrl && <VideoPlayer videoUrl={props.videoUrl} />}
           </CardContent>
         )}

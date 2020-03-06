@@ -88,8 +88,8 @@ const EventEditing = props => {
               isTextArea={true}
             />
             <FormEntry
-              inputName="PDF Programme"
-              inputValue={eventCurrentlyEditing.pdfProgramme}
+              inputName="Programme URL"
+              inputValue={eventCurrentlyEditing.programmeImage.programmeUrl}
               isProgramme={true}
             />
             <FormEntry

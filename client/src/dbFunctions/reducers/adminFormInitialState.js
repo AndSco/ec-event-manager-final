@@ -6,7 +6,7 @@ const adminFormInitialState = {
     endingTime: "",
     venue: "",
     description: "",
-    pdfProgramme: "",
+    programmeImage: "",
     videoUrl: "",
     isIdRequired: false
   },
@@ -17,7 +17,7 @@ const adminFormInitialState = {
     endingTime: true,
     venue: false,
     description: true,
-    pdfProgramme: true,
+    programmeImage: true,
     videoUrl: true,
     isIdRequired: true
   },

@@ -48,8 +48,8 @@ const adminInputs = [
     isTextArea: true
   },
   {
-    identifier: "pdfProgramme",
-    name: "PDF Programme",
+    identifier: "programmeImage",
+    name: "Programme image",
     isCompulsory: false,
     isLong: false,
     isFileInput: true

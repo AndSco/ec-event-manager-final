@@ -1,6 +1,9 @@
 import React from "react";
 import { inputValidator } from "../../dbFunctions/reducers/formReducer";
-import {uploadEventProgramme} from "../../dbFunctions/handlers/events";
+import {
+  uploadEventProgramme,
+  createAndUploadProgramme
+} from "../../dbFunctions/handlers/events";
 
 
 const Input = props => {
@@ -40,14 +43,19 @@ const Input = props => {
   }
 
   
-  const handleFileChange = async (e) => {
-    const programme = e.target.files[0];
-    const fd = new FormData();
-    fd.append("file", programme, programme.name);
-    const programmeUrl = await uploadEventProgramme(fd);
-    setInputValue(programmeUrl);
-    props.onInputChange(props.identifier, programmeUrl, true);
-  }
+  const handleFileChange = async e => {
+    try {
+      const programme = e.target.files[0];
+      const fd = new FormData();
+      fd.append("file", programme, programme.name);
+      const programmeData = await uploadEventProgramme(fd);
+      console.log("PROG DATA", programmeData);
+      setInputValue(programmeData);
+      props.onInputChange("programmeImage", programmeData, true);
+    } catch (err) {
+      throw err;
+    }
+  };
 
 
   let inputToRender = (

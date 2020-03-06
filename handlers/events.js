@@ -43,6 +43,10 @@ module.exports.getEvent = async (req, res, next) => {
 module.exports.deleteEvent = async (req, res, next) => {
   try {
     await Participant.deleteMany({ eventIdRegisteredFor: req.params.eventId });
+    const eventToDelete = await Event.findById(req.params.eventId);
+    const idOfProgrammeToDelete = eventToDelete.programmeImage.public_id;
+    console.log("the id is ", idOfProgrammeToDelete);
+    await deleteProgrammeOnCloudinary(idOfProgrammeToDelete);
     await Event.deleteOne({_id: req.params.eventId});
     res.status(200).json({message: "users and event deleted"});
   } catch(err) {
@@ -77,17 +81,31 @@ module.exports.uploadEventProgramme = async (req, res, next) => {
 };
 
 
-module.exports.deleteProgrammeOnCloudinary = async (req, res, next) => {
+// const deleteProgrammeOnCloudinary = async (req, res, next) => {
+//   try {
+//     const {public_id} = req.params;
+//     cloudinary.v2.uploader.destroy(public_id, (error, result) => {
+//       if (err) throw err;
+//       console.log("Deleted?", result);
+//       res.status(200).json({
+//         id: public_id,
+//         result
+//       })
+//     });
+//   } catch(err) {
+//     return next(err);
+//   }
+// }
+
+const deleteProgrammeOnCloudinary = async (public_id) => {
   try {
-    const idOfPdf = req.params.pdfPublicId;
-    cloudinary.v2.uploader.destroy(idOfPdf, {resource_type: "raw"}, (error, result) => {
-      console.log("Deleted pdf?", result);
-      res.status(200).json({
-        id: idOfPdf,
-        result
-      })
+    cloudinary.v2.uploader.destroy(public_id, (err, result) => {
+      if (err) {
+        throw err
+      };
+      console.log("Deleted?", result);
     });
-  } catch(err) {
-    return next(err);
+  } catch (err) {
+    throw err;
   }
-}
+};

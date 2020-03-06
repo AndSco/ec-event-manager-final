@@ -1,8 +1,7 @@
 import React from "react";
 import { inputValidator } from "../../dbFunctions/reducers/formReducer";
 import {
-  uploadEventProgramme,
-  createAndUploadProgramme
+  uploadEventProgramme
 } from "../../dbFunctions/handlers/events";
 
 

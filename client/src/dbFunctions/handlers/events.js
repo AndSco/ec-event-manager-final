@@ -55,7 +55,7 @@ export const editEvent = async eventId => {
 
 export const uploadEventProgramme = async (programmeFile) => {
   try {
-    const response = await axios.post(`/api/events/programmeUploadTwo`, programmeFile);
+    const response = await axios.post(`/api/events/programmeUpload`, programmeFile);
     const programmeData = response.data;
     console.log("RESPONSE I AM EXPECTING", programmeData);
     return programmeData;

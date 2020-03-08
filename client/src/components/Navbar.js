@@ -24,7 +24,7 @@ const Navbar = props => {
       ) : (
         <div id="admin-menu-items">
           <Link to="/">
-            <h5 onClick={finishedCreatingEvent}>DASHBOARD</h5>
+            <h5 onClick={finishedCreatingEvent}>OPEN EVENTS</h5>
           </Link>
           <Link to="/">
             <h5 onClick={startCreatingEvent}>CREATE NEW EVENT</h5>

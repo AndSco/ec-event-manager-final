@@ -12,9 +12,6 @@ const SecondaryButton = props => {
   );
 }
 
-const styles = {
-
-};
 
 export default SecondaryButton;
 

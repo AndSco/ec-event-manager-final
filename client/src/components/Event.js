@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./UIcomponents/Card";
 import EventDescription from "./UIcomponents/EventDescription";
 import VideoPlayer from "./VideoPlayer";
-import {formatDate, stringifyDate} from "../utils/functions";
+import {stringifyDate} from "../utils/functions";
 import EventHeader from "./EventHeader";
 import CardContent from "./UIcomponents/CardContent";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";

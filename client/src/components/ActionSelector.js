@@ -60,14 +60,5 @@ const ActionSelector = props => {
   );
 }
 
-const styles = {
-  container: {
-    width: 200,
-    padding: 10,
-    display: "flex", 
-    flexDirection: "column", 
-    border: "1px solid grey"
-  }
-}
 
 export default ActionSelector;

@@ -16,6 +16,7 @@ const ProgrammeViewer = props => {
           src={currentEvent.programmeImage.programmeUrl}
           className="programme-image"
           style={{ width: isImageFullScreen ? "90vw" : "" }}
+          alt="event programme"
         />
         {/* <p onClick={() => {
           setIsImageFullScreen(!isImageFullScreen);

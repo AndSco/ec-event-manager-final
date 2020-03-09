@@ -7,11 +7,7 @@ import CreateEventForm from "../../components/EventCreationForm";
 
 const DashboardPage = () => {
   const context = React.useContext(RegistrationContext);
-  const { isCreatingEvent, isEditingEvent, uploadAllEvents, allEvents, isAdminLoggedIn } = context;
-
-  React.useEffect(() => console.log("CREATING?", isCreatingEvent, "events", allEvents), [
-    isCreatingEvent
-  ]);
+  const { isCreatingEvent, isEditingEvent, uploadAllEvents, isAdminLoggedIn } = context;
 
 
   React.useEffect(() => {

@@ -1,13 +1,7 @@
 import React from "react";
-import Card from "./Card";
-import RegistrationContext from "../../contexts/eventRegistration/RegistrationContext";
 
 
 const Modal = props => {
-  const context = React.useContext(RegistrationContext);
-  const {closeModal} = context;
-
-
   return (
     <div
       id="modal"

@@ -1,11 +1,8 @@
 import React from "react";
-import Card from "./UIcomponents/Card";
 import SecondaryButton from "./UIcomponents/SecondaryButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
-import AddToCalendarButton from "./AddToCalendarButton";
 
-const ConfirmationMessage = props => {
+const ConfirmationMessage = () => {
   const context = React.useContext(RegistrationContext);
   const { backToEventPageAndHideButton } = context;
 

@@ -83,11 +83,11 @@ const Context = props => {
   const uploadAllEvents = React.useCallback(async () => {
     const allEventsfromDB = await fetchAllEvents();
     setAllEvents(allEventsfromDB)
-  }, [fetchAllEvents]);
+  }, []);
 
   React.useEffect(() => {
     uploadAllEvents();
-  }, [fetchAllEvents, uploadAllEvents])
+  }, [uploadAllEvents])
 
   
   // Useful for both sides
@@ -105,7 +105,7 @@ const Context = props => {
       setIsLoading(false);
       throw err;
     }
-  }, [fetchEventById]);
+  }, []);
 
 
   //MODAL

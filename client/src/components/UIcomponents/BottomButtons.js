@@ -1,11 +1,7 @@
 import React from "react";
-import SecondaryButton from "./SecondaryButton";
-import CustomButton from "./CustomButton";
-import RegistrationContext from "../../contexts/eventRegistration/RegistrationContext";
 
 
 const BottomButtons = props => {
-  const context = React.useContext(RegistrationContext);
 
   return (
     <div

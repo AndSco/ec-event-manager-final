@@ -18,7 +18,11 @@ const Navbar = props => {
         </h4>
       </div>
       {!isAdminLoggedIn ? (
-        <a href="https://ec.europa.eu/info/legal-notice_en#privacy-policy" target="_blank">
+        <a
+          href="https://ec.europa.eu/info/legal-notice_en#privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <h5>{"Privacy Policy".toUpperCase()}</h5>
         </a>
       ) : (
@@ -56,13 +60,3 @@ export default Navbar;
 
 
 
-{
-  /* <Link to="/admin/">
-            <h5>DASHBOARD</h5>
-          </Link> */
-}
-{
-  /* <Link to="/admin/create">
-            <h5>CREATE NEW EVENT</h5>
-          </Link> */
-}

@@ -8,12 +8,10 @@ import Input from "./UIcomponents/Input";
 import BottomButtons from "./UIcomponents/BottomButtons";
 import { FORM_UPDATE } from "../dbFunctions/reducers/formReducer";
 import CustomButton from "./UIcomponents/CustomButton";
-import SectionTitle from "./UIcomponents/SectionTitle";
 import CardContent from "./UIcomponents/CardContent";
-import SecondaryButton from "./UIcomponents/SecondaryButton";
 import EventMinimalHeader from "./EventMinimalHeader";
 
-const EventRegistrationForm = props => {
+const EventRegistrationForm = () => {
   const [formState, dispatchFormState] = React.useReducer(
     formReducer,
     initialFormState
@@ -22,9 +20,7 @@ const EventRegistrationForm = props => {
   const context = React.useContext(RegistrationContext);
   const {
     finishRegistrationProcess,
-    currentEvent,
-    closeRegistrationForm
-  } = context;
+    currentEvent  } = context;
 
   const inputsConfig = createStartingInputs(currentEvent);
   console.log("starting event input", createStartingInputs(currentEvent));

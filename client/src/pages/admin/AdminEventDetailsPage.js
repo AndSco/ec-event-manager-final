@@ -14,31 +14,8 @@ import ParticipantsCount from "../../components/UIcomponents/ParticipantsCount";
 import ActionSelector from "../../components/ActionSelector";
 import CardContent from "../../components/UIcomponents/CardContent";
 import { generateTableHeaders } from "../../assets/adminInputs";
+import DownloadExcel from "../../components/DownloadExcel";
 
-
-const tableHeaders = [
-  {
-    name: "Name",
-  },
-  {
-    name: "Organisation",
-  }, 
-  {
-    name: "Designation",
-  }, 
-  {
-    name: "Email address",
-  }, 
-  {
-    name: "Mobile",
-  }, 
-  {
-    name: "Status",
-  }, 
-  {
-    name: "", 
-  }
-];
 
 const AdminEventDetailsPage = props => {
   const context = React.useContext(RegistrationContext);
@@ -161,11 +138,17 @@ const AdminEventDetailsPage = props => {
               />
             </div>
           </div>
-          <div style={{ margin: "30px 0 0 0" }}>
+          <div style={{ 
+            margin: "30px 0 0 0", 
+            display: "flex",
+            justifyContent: "space-between", 
+            alignItems: "center" 
+          }}>
             <ActionSelector
               visibleParticipants={visibleParticipants}
               resortParticipants={resortParticipants}
             />
+            <DownloadExcel dataSet={visibleParticipants} />
           </div>
           <ParticipantsTable
             // tableHeaders={tableHeaders}

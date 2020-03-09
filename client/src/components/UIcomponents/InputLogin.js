@@ -2,26 +2,26 @@ import React from "react";
 
 const InputLogin = props => {
   const [inputValue, setInputValue] = React.useState("");
-  const {onInputChange} = props;
+  const { onInputChange, inputName } = props;
 
   React.useEffect(() => {
-    onInputChange(props.inputName, inputValue);
-  }, [inputValue, onInputChange])
+    onInputChange(inputName, inputValue);
+  }, [inputValue, onInputChange, inputName])
 
   return (
     <div
       style={{ ...styles.inputContainer, width: 270 }}
       className="input-container"
     >
-      <label htmlFor={props.inputName}>
-        {props.inputName}
+      <label htmlFor={inputName}>
+        {inputName}
         {props.isCompulsory && <span style={{ color: "red" }}> *</span>}
       </label>
 
       <input
         type={props.isPassword ? "password" : "text"}
         placeholder={props.placeholder}
-        name={props.inputName}
+        name={inputName}
         style={{ width: "100%" }}
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}

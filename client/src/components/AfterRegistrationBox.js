@@ -1,7 +1,6 @@
 import React from "react"
-import AddToCalendarButton from "./AddToCalendarButton";
 
-const AfterRegistrationBox = props => {
+const AfterRegistrationBox = () => {
   return (
     <div
       className="registration-button-substitute"
@@ -12,9 +11,6 @@ const AfterRegistrationBox = props => {
       }}
     >
       <h4>Registration sent!</h4>
-      {/* <h4 style={{ textTransform: "uppercase", color: "#D0D3D4" }}>
-        We'll get in touch with you shortly
-      </h4> */}
     </div>
   );
 }

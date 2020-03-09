@@ -102,7 +102,9 @@ const AdminEventDetailsPage = props => {
               />
               <ParticipantsCount
                 label="confirmed"
-                value={getParticipantsByStatus(currentEvent, "confirmed").length}
+                value={
+                  getParticipantsByStatus(currentEvent, "confirmed").length
+                }
                 functionToPerform={() => {
                   deselectAll();
                   setParticipantCountActive("confirmed");
@@ -138,17 +140,21 @@ const AdminEventDetailsPage = props => {
               />
             </div>
           </div>
-          <div style={{ 
-            margin: "30px 0 0 0", 
-            display: "flex",
-            justifyContent: "space-between", 
-            alignItems: "center" 
-          }}>
+          <div
+            style={{
+              margin: "30px 0 0 0",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
             <ActionSelector
               visibleParticipants={visibleParticipants}
               resortParticipants={resortParticipants}
             />
-            <DownloadExcel dataSet={visibleParticipants} />
+            <DownloadExcel
+              dataSet={visibleParticipants}
+            />
           </div>
           <ParticipantsTable
             // tableHeaders={tableHeaders}

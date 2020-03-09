@@ -12,11 +12,7 @@ const DownloadExcel = props => {
     <ExcelFile
       element={
         <button>
-          <FontAwesomeIcon 
-            icon="file-excel" 
-            size="2x" 
-            color="#797D7F"
-          />
+          <FontAwesomeIcon icon="file-excel" size="2x" color="#41BDFF" />
         </button>
       }
     >

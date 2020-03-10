@@ -74,6 +74,7 @@ const Context = props => {
 
   const finishedEditingEvent = () => {
     setIsEditingEvent(false);
+    setEventCurrentlyEditing(null);
   };
 
 

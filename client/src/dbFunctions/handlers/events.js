@@ -63,3 +63,13 @@ export const uploadEventProgramme = async (programmeFile) => {
     throw err;
   }
 };
+
+
+export const deleteEventProgramme = async (public_id) => {
+  try {
+    const response = await axios.delete(`/api/events/programmes/${public_id}`);
+    console.log(response.data);
+  } catch(err) {
+    throw err;
+  }
+}

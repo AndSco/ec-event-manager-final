@@ -7,8 +7,7 @@ const {
   deleteEvent,
   editEvent,
   uploadEventProgramme,
-  deleteProgrammeOnCloudinary,
-  testDeleteProgrammeOnCloudinary
+  deleteProgrammeWhenEditing
 } = require("../handlers/events");
 
 const multer = require("multer");
@@ -37,7 +36,7 @@ router.get("/:eventId", getEvent);
 router.post("/programmeUpload", upload.single("file"), uploadEventProgramme);
 router.post("/", createNewEvent);
 router.delete("/:eventId", deleteEvent);
-// router.delete("/programmes/:public_id", testDeleteProgrammeOnCloudinary);
+router.delete("/programmes/:public_id", deleteProgrammeWhenEditing); // To delete programme when editing
 router.patch("/:eventId", editEvent);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 import React from "react";
 import { inputValidator } from "../../dbFunctions/reducers/formReducer";
-import { uploadEventProgramme } from "../../dbFunctions/handlers/events";
+import { uploadEventProgramme, deleteEventProgramme } from "../../dbFunctions/handlers/events";
 import RegistrationContext from "../../contexts/eventRegistration/RegistrationContext";
 
 const Input = props => {
@@ -62,6 +62,16 @@ const Input = props => {
       throw err;
     }
   };
+
+  const deleteStaleProgramme = async () => {
+    if (eventCurrentlyEditing && eventCurrentlyEditing.programmeImage) {
+      console.log("ID", eventCurrentlyEditing.programmeImage.public_id);
+      await deleteEventProgramme(
+        eventCurrentlyEditing.programmeImage.public_id
+      );
+    }
+    return;
+  }
 
   let inputToRender = (
     <input
@@ -143,6 +153,8 @@ const Input = props => {
         accept=".png, .jpg, .JPG, .PNG, .jpeg"
         onChange={e => handleFileChange(e)}
         required={props.isCompulsory}
+        //delete old programme before uploading a new one
+        onClick={deleteStaleProgramme}
       />
     );
   }

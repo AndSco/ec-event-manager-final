@@ -96,6 +96,16 @@ const deleteProgrammeOnCloudinary = async (public_id) => {
   }
 };
 
+module.exports.deleteProgrammeWhenEditing = async (req, res, next) => {
+  try { 
+    const { public_id } = req.params;
+    const result = await deleteProgrammeOnCloudinary(public_id);
+    res.status(200).json(result);
+  } catch(err) {
+    return next(err);
+  }
+}
+
 // module.exports.testDeleteProgrammeOnCloudinary = async (req, res, next) => {
 //   try {
 //     const {public_id} = req.params;

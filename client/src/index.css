@@ -623,6 +623,20 @@ textarea {
   justify-content: center;
 }
 
+
+/* DATE INPUT */
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+}
+
+
+
 /* MEDIA QUERIES */
 @media only screen and (max-width:650px) {
   #password-box {

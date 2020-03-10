@@ -12,7 +12,7 @@ const DashboardPage = () => {
 
   React.useEffect(() => {
     uploadAllEvents();
-  }, [uploadAllEvents, isCreatingEvent]);
+  }, [uploadAllEvents, isCreatingEvent, isEditingEvent]);
 
 
   if (!isAdminLoggedIn) {

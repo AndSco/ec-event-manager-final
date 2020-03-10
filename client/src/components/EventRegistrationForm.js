@@ -1,12 +1,11 @@
 import React from "react";
-import { formReducer } from "../dbFunctions/reducers/formReducer";
+import { formReducer, FORM_UPDATE } from "../dbFunctions/reducers/formReducer";
 import initialFormState from "../dbFunctions/reducers/eventFormInitialState";
 import { createStartingInputs } from "../assets/eventInputs";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import { sendParticipantToDB } from "../dbFunctions/handlers/participants";
 import Input from "./UIcomponents/Input";
 import BottomButtons from "./UIcomponents/BottomButtons";
-import { FORM_UPDATE } from "../dbFunctions/reducers/formReducer";
 import CustomButton from "./UIcomponents/CustomButton";
 import CardContent from "./UIcomponents/CardContent";
 import EventMinimalHeader from "./EventMinimalHeader";

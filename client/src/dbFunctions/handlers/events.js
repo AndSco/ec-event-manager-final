@@ -43,9 +43,9 @@ export const deleteEventFromDB = async eventId => {
 }
  
 
-export const editEvent = async eventId => {
+export const editEvent = async (eventId, reqBody) => {
   try {
-    const response = await axios.patch(`/api/events/${eventId}`);
+    const response = await axios.patch(`/api/events/${eventId}`, reqBody);
     console.log(response.data);
   } catch(err) {
     throw err;

@@ -12,6 +12,7 @@ const PasswordBox = props => {
 
   const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState(null);
 
   const updateState = (entry, value) => {
     if (entry === "username") {
@@ -28,8 +29,9 @@ const PasswordBox = props => {
     if (areCredentialsRight) {
       console.log("logging you in!");
       logInAdmin();
+      return;
     }
-    return;
+    setError("Wrong username or password");
   }
 
   return (
@@ -45,6 +47,7 @@ const PasswordBox = props => {
           inputName="username"
           onInputChange={updateState}
           placeholder="enter username"
+          resetError={() => setError(null)}
         />
         <InputLogin
           isPassword={true}
@@ -52,7 +55,10 @@ const PasswordBox = props => {
           inputName="password"
           onInputChange={updateState}
           placeholder="enter password"
+          resetError={() => setError(null)}
         />
+
+        {error && <h5 className="error-message">{error}</h5>}
         <div style={{ marginTop: 20 }}>
           <CustomButton
             buttonName="ENTER"

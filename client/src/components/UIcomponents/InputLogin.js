@@ -25,9 +25,8 @@ const InputLogin = props => {
         style={{ width: "100%" }}
         value={inputValue}
         onChange={e => setInputValue(e.target.value)}
+        onFocus={props.resetError}
       />
-
-      {/* {errorMessage && <h5 className="error-message">{errorMessage}</h5>} */}
     </div>
   );
 }

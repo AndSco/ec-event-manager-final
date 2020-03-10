@@ -54,6 +54,7 @@ const Context = props => {
   const logoutAdmin = () => {
     setIsAdminLoggedIn(false);
     localStorage.removeItem("isAdminLoggedIn");
+    window.location = "/";
   }
 
 

@@ -82,7 +82,7 @@ const Input = props => {
         type="date"
         id={props.identifier}
         name={props.inputName}
-        value={inputValue}
+        value={eventCurrentlyEditing ? inputValue.slice(0, 10) : inputValue}
         onChange={e => handleChange(e)}
         onBlur={updateInput}
         required={props.isCompulsory}

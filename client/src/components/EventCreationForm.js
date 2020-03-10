@@ -26,11 +26,14 @@ const EventCreationForm = props => {
     eventCurrentlyEditing ? eventCurrentlyEditing : adminFormInitialState
   );
 
-  console.log("FORMSTATE", formState);
 
-  const [isIdRequired, setIsIdRequired] = React.useState("no");
+  const idRequirements = eventCurrentlyEditing && eventCurrentlyEditing.isIdRequired ? "yes" : "no";
+  const [isIdRequired, setIsIdRequired] = React.useState(idRequirements);
+
+  const organisationRequirements =
+    eventCurrentlyEditing && eventCurrentlyEditing.isOrganisationRequired ? "yes" : "no";
   const [isOrganisationRequired, setIsOrganisationRequired] = React.useState(
-    "no"
+    organisationRequirements
   );
 
   const handleInputChange = (identifier, value, isValid) => {

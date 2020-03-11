@@ -2,6 +2,7 @@ import React from "react";
 import ReactExport from "react-export-excel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sortParticipantsBySomeValue } from "../utils/functions";
+import IconWithLabel from "./UIcomponents/IconWithLabel";
 
 
 const ExcelFile = ReactExport.ExcelFile;
@@ -14,17 +15,25 @@ const DownloadExcel = props => {
     <ExcelFile
       element={
         <button>
-          <FontAwesomeIcon
-            icon="file-excel"
+          <IconWithLabel
+            iconName="file-excel"
+            iconLabel="Export confirmed participants to Excel"
             size="2x"
-            className="action-icon"
           />
         </button>
       }
     >
       <ExcelSheet
         name="Participants"
-        data={props.dataSet ? sortParticipantsBySomeValue("secondName", [...props.dataSet.filter(participant => participant.registrationStatus === "confirmed")]) : undefined} // if I don't copy it, it mutates the original array!
+        data={
+          props.dataSet
+            ? sortParticipantsBySomeValue("secondName", [
+                ...props.dataSet.filter(
+                  participant => participant.registrationStatus === "confirmed"
+                )
+              ])
+            : undefined
+        } // if I don't copy it, it mutates the original array!
       >
         <ExcelColumn label="Last Name" value="secondName" />
         <ExcelColumn label="First Name" value="firstName" />

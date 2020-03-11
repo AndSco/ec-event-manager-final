@@ -7,6 +7,7 @@ import RegistrationStatusIcon from "./UIcomponents/RegistrationStatusIcon";
 import CellContent from "./UIcomponents/CellContent";
 import Checkbox from "./UIcomponents/Checkbox";
 import { sendEmail } from "../utils/functions";
+import IconWithLabel from "./UIcomponents/IconWithLabel";
 
 
 const ParticipantsTable = props => {
@@ -102,10 +103,10 @@ const ParticipantsTable = props => {
                 </td>
                 <td className="icon-cell">
                   {entry.registrationStatus !== "confirmed" && (
-                    <FontAwesomeIcon
-                      icon="user-plus"
-                      className="action-icon"
-                      onClick={() => {
+                    <IconWithLabel
+                      iconName="user-plus"
+                      iconLabel="Confirm"
+                      onClickFunction={() => {
                         sendEmail("accept", [entry], currentEvent);
                         specifyParticipantId(entry._id);
                         manageModal("accept", entry);
@@ -113,36 +114,33 @@ const ParticipantsTable = props => {
                     />
                   )}
                   {entry.registrationStatus !== "rejected" && (
-                    <FontAwesomeIcon
-                      icon="user-minus"
-                      className="action-icon"
-                      onClick={() => {
+                    <IconWithLabel
+                      iconName="user-minus"
+                      iconLabel="Reject"
+                      onClickFunction={() => {
                         sendEmail("reject", [entry], currentEvent);
                         specifyParticipantId(entry._id);
                         manageModal("reject", entry);
                       }}
-                      style={{ padding: "0 10px" }}
                     />
                   )}
                   {entry.registrationStatus !== "spam" && (
-                    <FontAwesomeIcon
-                      icon="ban"
-                      className="action-icon"
-                      onClick={() => {
+                    <IconWithLabel
+                      iconName="ban"
+                      iconLabel="Mark as spam"
+                      onClickFunction={() => {
                         updateParticipantRegistrationOnDB(entry._id, "spam");
                         props.refreshEvent();
                       }}
-                      style={{ padding: "0 10px" }}
                     />
                   )}
-                  <FontAwesomeIcon
-                    icon="trash-alt"
-                    className="action-icon"
-                    onClick={async () => {
+                  <IconWithLabel
+                    iconName="trash-alt"
+                    iconLabel="Delete"
+                    onClickFunction={async () => {
                       specifyParticipantId(entry._id);
                       manageModal("delete", entry);
                     }}
-                    style={{ padding: "0 10px" }}
                   />
                 </td>
               </tr>
@@ -154,3 +152,48 @@ const ParticipantsTable = props => {
 };
 
 export default ParticipantsTable;
+
+
+{
+  /* <FontAwesomeIcon
+    icon="user-plus"
+    className="action-icon"
+    onClick={() => {
+      sendEmail("accept", [entry], currentEvent);
+      specifyParticipantId(entry._id);
+      manageModal("accept", entry);
+    }}
+  />;
+
+  <FontAwesomeIcon
+    icon="user-minus"
+    className="action-icon"
+    onClick={() => {
+      sendEmail("reject", [entry], currentEvent);
+      specifyParticipantId(entry._id);
+      manageModal("reject", entry);
+    }}
+    style={{ padding: "0 10px" }}
+  />
+
+  <FontAwesomeIcon
+    icon="ban"
+    className="action-icon"
+    onClick={() => {
+      updateParticipantRegistrationOnDB(entry._id, "spam");
+      props.refreshEvent();
+    }}
+    style={{ padding: "0 10px" }}
+  />
+
+  <FontAwesomeIcon
+    icon="trash-alt"
+    className="action-icon"
+    onClick={async () => {
+      specifyParticipantId(entry._id);
+      manageModal("delete", entry);
+    }}
+    style={{ padding: "0 10px" }}
+  />
+ */
+}

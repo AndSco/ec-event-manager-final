@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import CellContent from "./UIcomponents/CellContent";
 import {formatDate} from "../utils/functions";
+import IconWithLabel from "./UIcomponents/IconWithLabel";
 
 
 const Td = ({ children, to }) => {
@@ -51,7 +52,43 @@ const EventsTable = props => {
                 <CellContent value={entry.participantsRegistered.length} />
               </td>
               <td className="icon-cell">
-                <FontAwesomeIcon
+                <IconWithLabel
+                  iconName="edit"
+                  iconLabel="Edit event"
+                  onClickFunction={() => {
+                    startEditingEvent(entry);
+                  }}
+                />
+                <IconWithLabel
+                  iconName="trash-alt"
+                  iconLabel="Delete event"
+                  onClickFunction={() => {
+                    prepareEventToBeDeleted(entry._id);
+                    manageModal("deleteEvent", entry);
+                  }}
+                />
+                <Link to={`/${entry._id}`}>
+                  <IconWithLabel
+                    iconName="users"
+                    iconLabel="Manage participants"
+                  />
+                </Link>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>  
+  );
+}
+
+export default EventsTable;
+
+
+
+
+{
+  /* <FontAwesomeIcon
                   className="action-icon"
                   icon="edit"
                   onClick={() => {
@@ -65,17 +102,8 @@ const EventsTable = props => {
                     prepareEventToBeDeleted(entry._id);
                     manageModal("deleteEvent", entry);
                   }}
-                />
-                <Link to={`/${entry._id}`}>
-                  <FontAwesomeIcon className="action-icon" icon="users" />
-                </Link>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>  
-  );
+                /> */
 }
-
-export default EventsTable;
+ {
+   /* <FontAwesomeIcon className="action-icon" icon="users" /> */
+ }

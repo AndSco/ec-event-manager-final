@@ -6,7 +6,6 @@ import SectionTitle from "./UIcomponents/SectionTitle";
 import EventsTable from "./EventsTable";
 import CardContent from "./UIcomponents/CardContent";
 import {sortEventsByDate} from "../utils/functions";
-import Legend from "./Legend";
 
 
 const AdminEventList = props => {
@@ -35,7 +34,6 @@ const AdminEventList = props => {
             title="Open events"
             callToAction="Explore, edit or delete events"
           />
-          <Legend legendItems={legendItems} />
           {allEvents ? (
             <EventsTable
               tableHeaders={[

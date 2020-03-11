@@ -15,7 +15,6 @@ import ActionSelector from "../../components/ActionSelector";
 import CardContent from "../../components/UIcomponents/CardContent";
 import { generateTableHeaders } from "../../assets/adminInputs";
 import DownloadExcel from "../../components/DownloadExcel";
-import Legend from "../../components/Legend";
 
 
 const AdminEventDetailsPage = props => {
@@ -165,7 +164,6 @@ const AdminEventDetailsPage = props => {
               />
             </div>
           </div>
-          <Legend legendItems={legendItems} />
           <div
             style={{
               margin: "30px 0 0 0",

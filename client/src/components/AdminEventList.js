@@ -6,12 +6,26 @@ import SectionTitle from "./UIcomponents/SectionTitle";
 import EventsTable from "./EventsTable";
 import CardContent from "./UIcomponents/CardContent";
 import {sortEventsByDate} from "../utils/functions";
+import Legend from "./Legend";
 
 
 const AdminEventList = props => {
   const context = React.useContext(RegistrationContext);
   const { allEvents } = context;
-
+  const legendItems = [
+    {
+      iconName: "edit",
+      label: "Edit the event"
+    },
+    {
+      iconName: "trash-alt",
+      label: "Delete the event"
+    },
+    {
+      iconName: "users",
+      label: "Manage registered participants"
+    }
+  ];
 
   return (
     <div className="table-container">
@@ -23,13 +37,20 @@ const AdminEventList = props => {
           />
           {allEvents ? (
             <EventsTable
-              tableHeaders={["Title", "Date", "Venue", "Registered", ""]}
+              tableHeaders={[
+                "Title & Link to event",
+                "Date",
+                "Venue",
+                "Registered",
+                ""
+              ]}
               tableEntries={sortEventsByDate(allEvents)}
               isGeneralList={true}
             />
           ) : (
             <Loader />
           )}
+          <Legend legendItems={legendItems} />
         </CardContent>
       </Card>
     </div>

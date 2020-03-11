@@ -15,6 +15,7 @@ import ActionSelector from "../../components/ActionSelector";
 import CardContent from "../../components/UIcomponents/CardContent";
 import { generateTableHeaders } from "../../assets/adminInputs";
 import DownloadExcel from "../../components/DownloadExcel";
+import Legend from "../../components/Legend";
 
 
 const AdminEventDetailsPage = props => {
@@ -23,6 +24,30 @@ const AdminEventDetailsPage = props => {
   const eventId = props.match.params.eventId;
   const [participantCountActive, setParticipantCountActive] = React.useState("total");
   const [visibleParticipants, setVisibleParticipants] = React.useState(undefined);
+
+  const legendItems = [
+    {
+      iconName: "user-plus",
+      label: "Confirm participant"
+    },
+    {
+      iconName: "user-minus",
+      label: "Reject participant"
+    },
+    {
+      iconName: "ban",
+      label: "Mark participant as spam"
+    },
+    ,
+    {
+      iconName: "trash-alt",
+      label: "Delete participant from list"
+    },
+    {
+      iconName: "file-excel",
+      label: "Save list as excel file"
+    }
+  ];
 
   currentEvent && console.log("NEW TABLE HEADERS", generateTableHeaders(currentEvent));
   const responsiveTableHeaders = currentEvent ? generateTableHeaders(currentEvent) : undefined;
@@ -152,9 +177,7 @@ const AdminEventDetailsPage = props => {
               visibleParticipants={visibleParticipants}
               resortParticipants={resortParticipants}
             />
-            <DownloadExcel
-              dataSet={visibleParticipants}
-            />
+            <DownloadExcel dataSet={visibleParticipants} />
           </div>
           <ParticipantsTable
             // tableHeaders={tableHeaders}
@@ -162,6 +185,7 @@ const AdminEventDetailsPage = props => {
             tableEntries={visibleParticipants}
             refreshEvent={refreshEvent}
           />
+          <Legend legendItems={legendItems} />
           <div style={{ marginTop: 60 }}>
             <Link to="/">
               <SecondaryButton

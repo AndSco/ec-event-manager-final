@@ -2,7 +2,8 @@ import React from "react";
 import RegistrationContext from "./RegistrationContext";
 import {
   fetchAllEvents,
-  fetchEventById
+  fetchEventById,
+  deleteEventFromDB
 } from "../../dbFunctions/handlers/events";
 import { checkIfUserIsSelectedOrNot } from "../../utils/functions";
 import Modal from "../../components/UIcomponents/Modal";
@@ -78,6 +79,17 @@ const Context = props => {
     setEventCurrentlyEditing(null);
   };
 
+  // Event deleting 
+  const [idOfEventToDelete, setIdOfEventToDelete] = React.useState(null);
+  
+  const prepareEventToBeDeleted = eventId => {
+    setIdOfEventToDelete(eventId);
+  }
+
+  const deleteEventAndReload = async () => {
+    await deleteEventFromDB(idOfEventToDelete);
+    uploadAllEvents();
+  };
 
 
 
@@ -157,6 +169,14 @@ const Context = props => {
         setActionType("delete");
         setModalMessage(
           `Sure you want to delete ${participant.firstName} ${participant.secondName}?`
+        );
+        openModal();
+      }
+
+      if (purpose === "deleteEvent") {
+        setActionType("deleteEvent");
+        setModalMessage(
+          `Sure you want to delete ${participant.title}?`
         );
         openModal();
       }
@@ -247,6 +267,8 @@ const Context = props => {
         startEditingEvent,
         finishedEditingEvent,
         eventCurrentlyEditing,
+        //Event deletion
+        prepareEventToBeDeleted,
         //
         currentEvent,
         isLoading,
@@ -312,7 +334,11 @@ const Context = props => {
                       "spam"
                     );
                   }
-                  
+                }
+                if (actionType === "deleteEvent") {
+                  await deleteEventAndReload();
+                  closeModal();
+                  return;
                 }
                 
                 closeModal();

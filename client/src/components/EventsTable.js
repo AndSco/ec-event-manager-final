@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { deleteEventFromDB } from "../dbFunctions/handlers/events";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import CellContent from "./UIcomponents/CellContent";
 import {formatDate} from "../utils/functions";
@@ -20,12 +19,9 @@ const Td = ({ children, to }) => {
 
 const EventsTable = props => {
   const context = React.useContext(RegistrationContext);
-  const {uploadAllEvents, startEditingEvent} = context;
+  const { prepareEventToBeDeleted, startEditingEvent, manageModal } = context;
 
-  const deleteAndReload = async eventId => {
-    await deleteEventFromDB(eventId);
-    uploadAllEvents();
-  };
+  
 
   return (
     <table className="table events">
@@ -65,13 +61,13 @@ const EventsTable = props => {
                 <FontAwesomeIcon
                   className="action-icon"
                   icon="trash-alt"
-                  onClick={() => deleteAndReload(entry._id)}
+                  onClick={() => {
+                    prepareEventToBeDeleted(entry._id);
+                    manageModal("deleteEvent", entry);
+                  }}
                 />
                 <Link to={`/${entry._id}`}>
-                <FontAwesomeIcon
-                  className="action-icon"
-                  icon="users"
-                />
+                  <FontAwesomeIcon className="action-icon" icon="users" />
                 </Link>
               </td>
             </tr>

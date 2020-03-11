@@ -45,7 +45,7 @@ const AdminEventDetailsPage = props => {
     },
     {
       iconName: "file-excel",
-      label: "Save list as excel file"
+      label: "Export confirmed participants to excel"
     }
   ];
 
@@ -165,6 +165,7 @@ const AdminEventDetailsPage = props => {
               />
             </div>
           </div>
+          <Legend legendItems={legendItems} />
           <div
             style={{
               margin: "30px 0 0 0",
@@ -185,7 +186,6 @@ const AdminEventDetailsPage = props => {
             tableEntries={visibleParticipants}
             refreshEvent={refreshEvent}
           />
-          <Legend legendItems={legendItems} />
           <div style={{ marginTop: 60 }}>
             <Link to="/">
               <SecondaryButton

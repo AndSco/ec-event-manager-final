@@ -15,8 +15,8 @@ const Legend = props => {
   return (
     <div style={Styles.container}>
       {items}
-    </div>  
-  )
+    </div>
+  );
 }
 
 const Styles = {
@@ -24,7 +24,7 @@ const Styles = {
     display: "flex",
     justifyContent: "space-around", 
     color: "#D0D3D4", 
-    marginTop: "80px"
+    margin: "50px 0"
   }
 }
 

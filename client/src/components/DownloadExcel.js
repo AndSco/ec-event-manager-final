@@ -24,7 +24,7 @@ const DownloadExcel = props => {
     >
       <ExcelSheet
         name="Participants"
-        data={props.dataSet ? sortParticipantsBySomeValue("secondName", [...props.dataSet]) : undefined} // if I don't copy it, it mutates the original array!
+        data={props.dataSet ? sortParticipantsBySomeValue("secondName", [...props.dataSet.filter(participant => participant.registrationStatus === "confirmed")]) : undefined} // if I don't copy it, it mutates the original array!
       >
         <ExcelColumn label="Last Name" value="secondName" />
         <ExcelColumn label="First Name" value="firstName" />

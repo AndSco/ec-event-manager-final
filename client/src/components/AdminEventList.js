@@ -35,6 +35,7 @@ const AdminEventList = props => {
             title="Open events"
             callToAction="Explore, edit or delete events"
           />
+          <Legend legendItems={legendItems} />
           {allEvents ? (
             <EventsTable
               tableHeaders={[
@@ -50,7 +51,6 @@ const AdminEventList = props => {
           ) : (
             <Loader />
           )}
-          <Legend legendItems={legendItems} />
         </CardContent>
       </Card>
     </div>

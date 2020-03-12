@@ -196,9 +196,6 @@ const Context = props => {
   const [isSelectAllActive, setIsSelectAllActive] = React.useState(false);
   const [isDeselectAllActive, setIsDeselectAllActive] = React.useState(false);
   const [selectedParticipants, setSelectedParticipants] = React.useState([]);
-  // React.useEffect(() => console.log(selectedParticipants), [
-  //   selectedParticipants
-  // ]);
 
   const selectAll = () => {
     setIsSelectAllActive(true);
@@ -314,7 +311,6 @@ const Context = props => {
                   await removeParticipantFromDB(selectedParticipantId);
                 }
                 if (actionType.includes("batch")) {
-                  console.log("selected participants", selectedParticipants);
                   const participantsIds = selectedParticipants.map(participant => participant._id);
                   if (actionType === "batchAccept") {
                     await updateParticipantsInBulkOnDb(

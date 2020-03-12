@@ -83,12 +83,10 @@ module.exports.uploadEventProgramme = async (req, res, next) => {
 
 const deleteProgrammeOnCloudinary = async (public_id) => {
   try {
-    console.log("public id", public_id);
     const result = await cloudinary.v2.uploader.destroy(`eventManager/${public_id}`, (err, result) => {
       if (err) {
         throw err
       };
-      console.log("Deleted?", result);
       return result;
     });
   } catch (err) {

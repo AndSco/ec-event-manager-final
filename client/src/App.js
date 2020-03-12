@@ -16,7 +16,6 @@ library.add(fab, faCalendarAlt, faClock, faMapPin, faAngleDown, faAngleLeft, faA
 
 function App() {
   const isInternetExplorer = /*@cc_on!@*/ false || !!document.documentMode;
-  console.log("is this Explorer?", isInternetExplorer);
 
   if (isInternetExplorer) {
     return (

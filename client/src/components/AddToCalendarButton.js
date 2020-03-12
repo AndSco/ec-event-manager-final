@@ -31,8 +31,6 @@ const AddToCalendarButton = props => {
     }
   }, [currentEvent])
 
-  React.useEffect(() => console.log("FOR CALENDAR", eventForCalendar), [eventForCalendar]);
-
 
   return (
     <div className="calendar-container">

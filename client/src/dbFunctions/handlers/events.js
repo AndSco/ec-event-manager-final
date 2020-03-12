@@ -2,9 +2,7 @@ import axios from "axios";
 
 export const createEvent = async eventConfigObj => {
   try {
-    const response = await axios.post("/api/events", eventConfigObj);
-    const eventCreated = response.data;
-    console.log("Created event:", eventCreated);
+    await axios.post("/api/events", eventConfigObj);
   } catch(err) {
     throw(err);
   }
@@ -35,8 +33,7 @@ export const fetchEventById = async eventId => {
 
 export const deleteEventFromDB = async eventId => {
   try {
-    const response = await axios.delete(`/api/events/${eventId}`);
-    console.log(response.data);
+    await axios.delete(`/api/events/${eventId}`);
   } catch(err) {
     throw err;
   }
@@ -45,8 +42,7 @@ export const deleteEventFromDB = async eventId => {
 
 export const editEvent = async (eventId, reqBody) => {
   try {
-    const response = await axios.patch(`/api/events/${eventId}`, reqBody);
-    console.log(response.data);
+    await axios.patch(`/api/events/${eventId}`, reqBody);
   } catch(err) {
     throw err;
   }
@@ -57,7 +53,6 @@ export const uploadEventProgramme = async (programmeFile) => {
   try {
     const response = await axios.post(`/api/events/programmeUpload`, programmeFile);
     const programmeData = response.data;
-    console.log("RESPONSE I AM EXPECTING", programmeData);
     return programmeData;
   } catch (err) {
     throw err;
@@ -67,8 +62,7 @@ export const uploadEventProgramme = async (programmeFile) => {
 
 export const deleteEventProgramme = async (public_id) => {
   try {
-    const response = await axios.delete(`/api/events/programmes/${public_id}`);
-    console.log(response.data);
+    await axios.delete(`/api/events/programmes/${public_id}`);
   } catch(err) {
     throw err;
   }

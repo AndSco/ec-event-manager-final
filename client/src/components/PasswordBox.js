@@ -25,9 +25,7 @@ const PasswordBox = props => {
 
   const login = async () => {
     const areCredentialsRight = await authenticate(userName, password);
-    console.log("are creds right?", areCredentialsRight);
     if (areCredentialsRight) {
-      console.log("logging you in!");
       logInAdmin();
       return;
     }

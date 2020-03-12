@@ -20,9 +20,6 @@ const EventPage = props => {
     loadEventOnPage(eventId);
   }, [loadEventOnPage, eventId])
 
-  React.useEffect(() => console.log(currentEvent), [currentEvent]);
-
-
   return isLoading || !currentEvent ? (
     <Loader />
   ) : !isRegistrationOver ? (

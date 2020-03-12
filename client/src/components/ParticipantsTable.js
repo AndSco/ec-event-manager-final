@@ -1,5 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import {
   updateParticipantRegistrationOnDB} from "../dbFunctions/handlers/participants";
@@ -54,7 +53,6 @@ const ParticipantsTable = props => {
       <tbody>
         {props.tableEntries &&
           props.tableEntries.map((entry, i) => {
-            console.log("ENTRY", entry);
             return (
               <tr key={i}>
                 <td>
@@ -153,47 +151,3 @@ const ParticipantsTable = props => {
 
 export default ParticipantsTable;
 
-
-{
-  /* <FontAwesomeIcon
-    icon="user-plus"
-    className="action-icon"
-    onClick={() => {
-      sendEmail("accept", [entry], currentEvent);
-      specifyParticipantId(entry._id);
-      manageModal("accept", entry);
-    }}
-  />;
-
-  <FontAwesomeIcon
-    icon="user-minus"
-    className="action-icon"
-    onClick={() => {
-      sendEmail("reject", [entry], currentEvent);
-      specifyParticipantId(entry._id);
-      manageModal("reject", entry);
-    }}
-    style={{ padding: "0 10px" }}
-  />
-
-  <FontAwesomeIcon
-    icon="ban"
-    className="action-icon"
-    onClick={() => {
-      updateParticipantRegistrationOnDB(entry._id, "spam");
-      props.refreshEvent();
-    }}
-    style={{ padding: "0 10px" }}
-  />
-
-  <FontAwesomeIcon
-    icon="trash-alt"
-    className="action-icon"
-    onClick={async () => {
-      specifyParticipantId(entry._id);
-      manageModal("delete", entry);
-    }}
-    style={{ padding: "0 10px" }}
-  />
- */
-}

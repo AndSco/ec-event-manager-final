@@ -11,20 +11,6 @@ import {sortEventsByDate} from "../utils/functions";
 const AdminEventList = props => {
   const context = React.useContext(RegistrationContext);
   const { allEvents } = context;
-  const legendItems = [
-    {
-      iconName: "edit",
-      label: "Edit the event"
-    },
-    {
-      iconName: "trash-alt",
-      label: "Delete the event"
-    },
-    {
-      iconName: "users",
-      label: "Manage registered participants"
-    }
-  ];
 
   return (
     <div className="table-container">

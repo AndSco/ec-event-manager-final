@@ -31,7 +31,6 @@ if (process.env.NODE_ENV === "production") {
 
 // ERROR HANDLER
 app.use((error, req, res) => {
-  console.log("ERROR HANDLER", error.message);
   res.status(error.status || 500);
   res.json({
     error: {

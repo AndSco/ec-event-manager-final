@@ -1,6 +1,5 @@
 import React from "react";
 import ReactExport from "react-export-excel";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sortParticipantsBySomeValue } from "../utils/functions";
 import IconWithLabel from "./UIcomponents/IconWithLabel";
 

@@ -143,15 +143,11 @@ export const sortEventsByDate = eventsArray => {
 
 export const checkIfUserIsSelectedOrNot = (userObj, stateArray) => {
   let newStateArray = [...stateArray];
-  console.log("At beginning", newStateArray);
   if (stateArray.length > 0 && stateArray.some(entry => entry._id === userObj._id)) {
     newStateArray = newStateArray.filter(entry => entry._id !== userObj._id);
-    console.log("Removed one", newStateArray);
   } else {
     newStateArray.push(userObj);
-    console.log("Added one", newStateArray);
   }
-  // console.log(newStateArray);
   return newStateArray;
 }
 

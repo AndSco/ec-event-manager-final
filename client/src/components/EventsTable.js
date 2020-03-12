@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import CellContent from "./UIcomponents/CellContent";
 import {formatDate} from "../utils/functions";
@@ -83,27 +82,3 @@ const EventsTable = props => {
 }
 
 export default EventsTable;
-
-
-
-
-{
-  /* <FontAwesomeIcon
-                  className="action-icon"
-                  icon="edit"
-                  onClick={() => {
-                    startEditingEvent(entry);
-                  }}
-                />
-                <FontAwesomeIcon
-                  className="action-icon"
-                  icon="trash-alt"
-                  onClick={() => {
-                    prepareEventToBeDeleted(entry._id);
-                    manageModal("deleteEvent", entry);
-                  }}
-                /> */
-}
- {
-   /* <FontAwesomeIcon className="action-icon" icon="users" /> */
- }

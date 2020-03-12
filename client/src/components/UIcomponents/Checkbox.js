@@ -7,13 +7,13 @@ const Checkbox = props => {
   const context = React.useContext(RegistrationContext);
   const { selectedParticipants } = context;
 
-  const isParticipantSelected = () => {
+  const isParticipantSelected = React.useCallback(() => {
     return selectedParticipants.some(participant => participant._id === participantId);
-  }
+  }, [selectedParticipants, participantId])
 
   React.useEffect(() => {
     setIsChecked(isParticipantSelected());
-  }, [selectedParticipants, participantId])
+  }, [selectedParticipants, participantId, isParticipantSelected]);
 
 
   return (

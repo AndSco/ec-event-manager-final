@@ -19,7 +19,6 @@ const ActionSelector = props => {
   
 
   const handleChange = async (e, actionToPerform) => {
-    console.log(e.target.value);
     if (actionToPerform === "sort") {
       resortParticipants(
         sortParticipantsBySomeValue(e.target.value, visibleParticipants)

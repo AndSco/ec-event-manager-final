@@ -19,50 +19,18 @@ import DownloadExcel from "../../components/DownloadExcel";
 
 const AdminEventDetailsPage = props => {
   const context = React.useContext(RegistrationContext);
-  const { currentEvent, isLoading, loadEventOnPage, deselectAll, selectedParticipants } = context;
+  const { currentEvent, isLoading, loadEventOnPage, deselectAll } = context;
   const eventId = props.match.params.eventId;
   const [participantCountActive, setParticipantCountActive] = React.useState("total");
   const [visibleParticipants, setVisibleParticipants] = React.useState(undefined);
 
-  const legendItems = [
-    {
-      iconName: "user-plus",
-      label: "Confirm participant"
-    },
-    {
-      iconName: "user-minus",
-      label: "Reject participant"
-    },
-    {
-      iconName: "ban",
-      label: "Mark participant as spam"
-    },
-    ,
-    {
-      iconName: "trash-alt",
-      label: "Delete participant from list"
-    },
-    {
-      iconName: "file-excel",
-      label: "Export confirmed participants to excel"
-    }
-  ];
-
-  currentEvent && console.log("NEW TABLE HEADERS", generateTableHeaders(currentEvent));
   const responsiveTableHeaders = currentEvent ? generateTableHeaders(currentEvent) : undefined;
 
   const resortParticipants = receivedArray => {
-    console.log("received array", receivedArray);
     const copiedArray = [...receivedArray];
     setVisibleParticipants(copiedArray);
   }
 
-
-  React.useEffect(() => {
-    if (selectedParticipants) {
-      console.log("LENGTH", selectedParticipants.length);
-    }
-  }, [selectedParticipants]);
 
   React.useEffect(() => {
     if (currentEvent) {

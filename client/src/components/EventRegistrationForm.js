@@ -22,7 +22,6 @@ const EventRegistrationForm = () => {
     currentEvent  } = context;
 
   const inputsConfig = createStartingInputs(currentEvent);
-  console.log("starting event input", createStartingInputs(currentEvent));
 
   const handleInputChange = (identifier, value, isValid) => {
     dispatchFormState({
@@ -35,7 +34,6 @@ const EventRegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("To submit", formState);
     const configsObject = formState.inputValues;
     finishRegistrationProcess();
     sendParticipantToDB(configsObject, currentEvent._id);

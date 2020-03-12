@@ -5,9 +5,6 @@ import RegistrationContext from "../contexts/eventRegistration/RegistrationConte
 const ProgrammeViewer = props => {
   const context = React.useContext(RegistrationContext);
   const { currentEvent } = context;
-  const [isImageFullScreen, setIsImageFullScreen] = React.useState(false);
-
-  console.log("evvv", currentEvent);
 
   return (
     <div style={{ marginTop: 70 }}>
@@ -15,12 +12,8 @@ const ProgrammeViewer = props => {
         <img
           src={currentEvent.programmeImage.programmeUrl}
           className="programme-image"
-          style={{ width: isImageFullScreen ? "90vw" : "" }}
           alt="event programme"
         />
-        {/* <p onClick={() => {
-          setIsImageFullScreen(!isImageFullScreen);
-          }}>Expand</p> */}
       </ExpandingSection>
     </div>
   );

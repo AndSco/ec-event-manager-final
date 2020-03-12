@@ -12,7 +12,7 @@ const IconWithLabel = props => {
         onMouseEnter={() => setIsTooltipVisible(true)}
         onMouseLeave={() => setIsTooltipVisible(false)}
         onClick={props.onClickFunction}
-        size={props.size ? props.size : ""}
+        size={props.size ? props.size : "1x"}
       />
       <div
         className="tooltip"

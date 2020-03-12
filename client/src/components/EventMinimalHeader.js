@@ -7,8 +7,6 @@ const EventMinimalHeader = props => {
   const context = React.useContext(RegistrationContext);
   const { closeRegistrationForm, isRegistering } = context;
 
-  console.log("IS REGISTERING", isRegistering);
-
   return (
     <div className="minimal-header" id={isRegistering ? "make-it-visible" : ""}>
       <FontAwesomeIcon

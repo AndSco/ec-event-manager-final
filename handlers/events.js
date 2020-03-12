@@ -106,17 +106,3 @@ module.exports.deleteProgrammeWhenEditing = async (req, res, next) => {
   }
 }
 
-// module.exports.testDeleteProgrammeOnCloudinary = async (req, res, next) => {
-//   try {
-//     const {public_id} = req.params;
-//     console.log("public id", public_id);
-//     const result = await cloudinary.v2.uploader.destroy(`eventManager/${public_id}`, { invalidate: true }, (error, result) => {
-//         console.log(result); // { result: 'ok' }
-//         return result;
-//       }
-//     );
-//     res.status(200).json(result);
-//   } catch (err) {
-//     return next(err);
-//   }
-// };

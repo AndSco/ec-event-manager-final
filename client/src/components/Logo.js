@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/images/ec_logo.png";
 
 const Logo = props => {
   return (
@@ -31,7 +32,7 @@ const Logo = props => {
             height: 80,
             borderRadius: 40,
             //backgroundColor: "white",
-            backgroundImage: `url("https://scontent.fmla3-1.fna.fbcdn.net/v/t1.0-9/11951150_1176857798997798_586973355802380784_n.png?_nc_cat=106&_nc_ohc=08pkNCGfLNwAX9kgGX8&_nc_ht=scontent.fmla3-1.fna&oh=a3d2e41b2a8a7c26de937c6148d1ce26&oe=5E95E93C")`,
+            backgroundImage: `url(${logo})`, 
             backgroundSize: "contain",
             backgroundPosition: "center"
           }}

@@ -46,7 +46,9 @@ const EventCreationForm = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const configsObject = !eventCurrentlyEditing ? formState.inputValues : formState;
+    const configsObject = formState.inputValues || formState;
+    console.log("CONFIGS OBJ", configsObject);
+    
     //Add the ID info!
     configsObject.isIdRequired = isIdRequired === "no" ? false : true;
     configsObject.isOrganisationRequired =

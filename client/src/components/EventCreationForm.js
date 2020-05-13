@@ -26,7 +26,6 @@ const EventCreationForm = props => {
     eventCurrentlyEditing ? eventCurrentlyEditing : adminFormInitialState
   );
 
-
   const idRequirements = eventCurrentlyEditing && eventCurrentlyEditing.isIdRequired ? "yes" : "no";
   const [isIdRequired, setIsIdRequired] = React.useState(idRequirements);
 
@@ -47,7 +46,7 @@ const EventCreationForm = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const configsObject = formState.inputValues;
+    const configsObject = !eventCurrentlyEditing ? formState.inputValues : formState;
     //Add the ID info!
     configsObject.isIdRequired = isIdRequired === "no" ? false : true;
     configsObject.isOrganisationRequired =

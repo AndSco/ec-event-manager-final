@@ -811,11 +811,13 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 
-@media only screen and (max-width:650px) {
+@media only screen and (max-width:420px) {
   .confirmation-box-container {
     background: #56CCF2; 
     background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
     background: linear-gradient(to right, #2F80ED, #56CCF2);
+    max-height: 100vh;
+    padding:0;
   }
 
   .confirmation-box-container h2 {

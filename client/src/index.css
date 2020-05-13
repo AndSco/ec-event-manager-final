@@ -146,7 +146,7 @@ textarea {
   display: flex;
   flex-direction: column;
   background: #56CCF2; 
-  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
+  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
   background: linear-gradient(to right, #2F80ED, #56CCF2);
   justify-content: flex-start;
   align-items: center;
@@ -807,5 +807,35 @@ input[type="date"]::-webkit-inner-spin-button {
 
   #hidable-footer {
     display: none;
+  }
+}
+
+
+@media only screen and (max-width:650px) {
+  .confirmation-box-container {
+    background: #56CCF2; 
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+  }
+
+  .confirmation-box-container h2 {
+    color: white;
+    background-color: var(--pink);
+    padding: 1.2rem 1.5rem;
+  }
+
+  #confirmation-box-content h4 {
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-top: 10%;
+  }
+
+  .secondary-button {
+    font-size: 1.5rem;
+    color: var(--light-grey);
+    background: white;
+    padding: .3rem 2rem;
+    border-radius: 40px;
   }
 }

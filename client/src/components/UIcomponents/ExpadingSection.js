@@ -13,7 +13,8 @@ const ExpandingSection = props => {
           display: "flex",
           alignItems: "center",
           borderBottom: isVisible ? 0 : "1px solid #D0D3D4",
-          padding: "0 10px 15px 0"
+          padding: "0 10px 15px 0",
+          cursor: "pointer"
         }}
         onClick={() => setIsVisible(!isVisible)}
       >

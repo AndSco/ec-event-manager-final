@@ -9,6 +9,7 @@
   --pink: #FF006C;
   --green: #13E3AB;
   --barely-visible-grey: #F4F6F7;
+  --europe-blue: #1C4785;
   box-sizing: border-box;
 }
 
@@ -192,7 +193,7 @@ textarea {
 
 .event-header {
   width: 100%;
-  background-color: #1C4785;
+  background-color: var(--europe-blue);
 }
 
 .minimal-header {
@@ -212,10 +213,11 @@ textarea {
 
 .event-header-content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 40px 80px;
   padding-top: 0;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 
 .event-header p {
@@ -226,14 +228,23 @@ textarea {
 .event-title {
   color: white;
   font-family: "light";
-  text-transform: uppercase;
+  line-height: 35px;
+  /* text-transform: uppercase; */
   font-size: 28px;
+  padding-bottom: 2rem;
 }
 
 .event-details {
   font-family: "light";
   color: var(--light-azure);
   font-size: 16px;
+}
+
+.bottom-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .event-section-title {
@@ -344,12 +355,21 @@ textarea {
 }
 
 
+.useful-link {
+  font-family: "regular";
+  color: var(--europe-blue);
+}
+
 #admin-menu-items {
   display: flex;
   justify-content: space-between;
   width: 25%;
   max-width: 450px;
   min-width: 350px;
+}
+
+#admin-menu-items h5 {
+  font-family: "medium";
 }
 
 #admin-menu-items h5:hover {
@@ -383,7 +403,7 @@ textarea {
 
 .table .table-main-cell {
   text-align: start;
-  font-family: "medium";
+  font-family: "regular";
   color: var(--dark-grey);
 }
 
@@ -839,5 +859,10 @@ input[type="date"]::-webkit-inner-spin-button {
     background: white;
     padding: .3rem 2rem;
     border-radius: 40px;
+  }
+
+  .bottom-details {
+    flex-direction: column;
+    align-items: center;
   }
 }

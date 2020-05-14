@@ -50,7 +50,13 @@ const EventSchema = new mongoose.Schema({
     public_id: {
       type: String
     }
-  }
+  }, 
+  usefulLinks: [
+    {
+      linkName: String, 
+      url: String
+    }
+  ]
 });
 
 // To let the post save hook whether the document is newly created or not;

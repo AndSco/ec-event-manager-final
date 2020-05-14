@@ -2,6 +2,7 @@ import React from "react";
 import { inputValidator } from "../../dbFunctions/reducers/formReducer";
 import { uploadEventProgramme, deleteEventProgramme } from "../../dbFunctions/handlers/events";
 import RegistrationContext from "../../contexts/eventRegistration/RegistrationContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Input = props => {
   const context = React.useContext(RegistrationContext);
@@ -125,7 +126,7 @@ const Input = props => {
   }
 
   if (props.isFileInput) {
-    inputToRender = (
+    inputToRender = !props.isThereAProgrammeImage ? (
       <input
         type="file"
         id={props.identifier}
@@ -136,6 +137,21 @@ const Input = props => {
         //delete old programme before uploading a new one
         onClick={deleteStaleProgramme}
       />
+    ) : (
+      <h4
+        onClick={() => {
+          deleteStaleProgramme();
+          props.removeProgramme();
+        }}
+      >
+        Remove or change current programme
+        <FontAwesomeIcon
+          icon="times-circle"
+          color="grey"
+          size="xs"
+          style={{ cursor: "pointer", paddingLeft: ".3rem" }}
+        />
+      </h4>
     );
   }
 

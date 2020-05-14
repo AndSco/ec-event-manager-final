@@ -8,6 +8,7 @@ import CardContent from "./UIcomponents/CardContent";
 import RegistrationContext from "../contexts/eventRegistration/RegistrationContext";
 import EventRegistrationForm from "./EventRegistrationForm";
 import ProgrammeViewer from "./ProgrammeViewer";
+import LinkSection from "./LinkSection";
 
 
 const Event = props => {
@@ -29,6 +30,9 @@ const Event = props => {
         ) : (
           <CardContent>
             <EventDescription description={props.description} />
+            {props.usefulLinks && props.usefulLinks.length > 0 && (
+              <LinkSection links={props.usefulLinks} />
+            )}
             {props.programmeImage && <ProgrammeViewer />}
             {props.videoUrl && <VideoPlayer videoUrl={props.videoUrl} />}
           </CardContent>
